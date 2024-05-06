@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Number Validator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ffd1ff);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        @keyframes gradientBG {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 255, 255, 0.7); /* Shadow pada pinggiran */
+            max-width: 400px;
+            width: 90%;
+        }
+
+        h1 {
+            color: #004080;
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 18px;
+            color: #555;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #ff9a9e; /* Warna pastel */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background-color: #fad0c4; /* Warna saat hover */
+        }
+
+        #message {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .yes {
+            color: #00cc00; /* Warna hijau untuk angka valid */
+        }
+
+        .no {
+            color: #ff0000; /* Warna merah untuk angka tidak valid */
+        }
+
+        #result {
+            margin-top: 20px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        #studentInfo {
+            color: #777;
+            opacity: 0.7; /* Menjadikan teks lebih transparan */
+            font-size: 14px; /* Mengurangi ukuran font */
+            margin-top: 10px; /* Mengurangi margin atas */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Scientific Number Validator</h1>
+        <label for="input-field">Enter a number:</label>
+        <input type="text" id="input-field">
+        <button onclick="validateInput()">Check</button>
+        <p id="message"></p>
+        <div id="result"></div>
+        <div id="studentInfo">By: Dian Tri Yuniarti (230214060123) - Informatics/Computer Science</div>
+    </div>
+
+    <script>
+        const inputField = document.getElementById('input-field');
+        const messageElement = document.getElementById('message');
+
+        const scientificNumberRegex = /^[-+]?\d+(\.\d+)?([eE][-+]?\d+)?$/;
+
+        function validateInput() {
+            const inputValue = inputField.value.trim();
+            if (scientificNumberRegex.test(inputValue)) {
+                messageElement.textContent = 'Yes, it is a number';
+                messageElement.className = 'yes';
+            } else {
+                messageElement.textContent = 'No, it is not a number';
+                messageElement.className = 'no';
+            }
+        }
+    </script>
+</body>
+</html>
