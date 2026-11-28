@@ -1587,326 +1587,289 @@
         </h2>
       </div>
 
-      <!-- ==================== HORIZONTAL PHOTO ARCHIVE CAROUSEL (AUTO-SWIPE) ==================== -->
-      <div class="relative w-full my-6 reveal" id="pubCarouselWrapper">
+            <!-- ==================== HORIZONTAL PUBLICATION CARDS (AUTO-SWIPE · NO PHOTOS) ==================== -->
+      <div class="relative w-full max-w-full overflow-hidden my-6 reveal" id="pubCarouselWrapper">
         
         <!-- Controls Bar -->
-        <div class="flex items-center justify-between mb-4 px-1">
-          <div class="flex items-center gap-2 text-xs font-mono text-stone-400">
-            <span class="inline-block w-2 h-2 rounded-full bg-rose-500 animate-pulse"></span>
-            <span>// DOKUMENTASI PUBLIKASI &amp; RISET ILMIAH</span>
+        <div class="flex items-center justify-between gap-3 mb-4 px-1">
+          <div class="flex items-center gap-2 text-xs font-mono text-stone-400 min-w-0">
+            <span class="inline-block w-2 h-2 rounded-full bg-rose-500 animate-pulse shrink-0"></span>
+            <span class="truncate">// ARSIP PUBLIKASI &amp; RISET ILMIAH</span>
           </div>
 
           <!-- Arrow Controls -->
-          <div class="flex items-center gap-2">
-            <button id="pubCarouselPrevBtn" onclick="scrollPubCarousel(-1)" class="w-9 h-9 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:text-white hover:bg-stone-800 flex items-center justify-center transition cursor-pointer" title="Sebelumnya">
+          <div class="flex items-center gap-2 shrink-0">
+            <button id="pubCarouselPrevBtn" onclick="scrollPubCarousel(-1)" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:text-white hover:bg-stone-800 flex items-center justify-center transition cursor-pointer" title="Sebelumnya">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
             </button>
-            <button id="pubCarouselNextBtn" onclick="scrollPubCarousel(1)" class="w-9 h-9 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:text-white hover:bg-stone-800 flex items-center justify-center transition cursor-pointer" title="Selanjutnya">
+            <button id="pubCarouselNextBtn" onclick="scrollPubCarousel(1)" class="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-stone-900 border border-stone-800 text-stone-300 hover:text-white hover:bg-stone-800 flex items-center justify-center transition cursor-pointer" title="Selanjutnya">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
             </button>
           </div>
         </div>
 
-        <!-- Carousel Track (Auto-swipe & Manual Drag) -->
-        <div id="pubCarouselTrack" class="flex gap-4 sm:gap-6 overflow-x-auto no-scrollbar scroll-smooth snap-x snap-mandatory py-2 px-1 cursor-grab active:cursor-grabbing">
+        <!-- Carousel Track (Auto-swipe & Manual Drag · Pure Academic Typography, No Photos) -->
+        <div id="pubCarouselTrack" class="flex gap-4 sm:gap-6 overflow-x-auto w-full min-w-0 max-w-full no-scrollbar scroll-smooth snap-x snap-mandatory py-2 px-1 cursor-grab active:cursor-grabbing">
           
-          <!-- CARD 1: Kopiluvium -->
-          <div class="snap-start shrink-0 w-[290px] sm:w-[350px] md:w-[380px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-xl overflow-hidden flex flex-col justify-between hover:border-stone-400 transition-all duration-300 group">
-            <div class="p-2.5 sm:p-3 bg-[#f2ece1] border-b border-stone-300/80">
-              <div class="w-full h-48 sm:h-54 rounded-xl overflow-hidden bg-white border border-stone-300/80 shadow-2xs">
-                <img src="assets/images/kopiluvium_presentation.jpg" alt="Presentasi Serah Terima Sistem Kopiluvium" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
+          <!-- CARD 1: AnxietyCheck SVM Machine Learning -->
+          <div class="snap-start shrink-0 w-[300px] sm:w-[360px] md:w-[390px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-lg hover:shadow-2xl hover:border-stone-400 transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 group">
+            <div>
+              <!-- Top Category Bar -->
+              <div class="flex items-center justify-between gap-2 pb-3 mb-3.5 border-b border-stone-300/80">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                  <span class="text-[10px] font-mono font-bold tracking-wider text-rose-700 uppercase">
+                    SKRIPSI · SINTA ACCREDITED
+                  </span>
+                </div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-stone-200 text-stone-700 border border-stone-300">
+                  2026
+                </span>
               </div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mt-2 px-1">
-                <span>// STUDI KERJA PRAKTEK</span>
-                <span>2025</span>
+
+              <!-- Title -->
+              <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2.5 group-hover:text-rose-950 transition">
+                AnxietyCheck: Sistem Skrining Kecemasan Dini Menggunakan SVM
+              </h3>
+
+              <!-- Excerpt -->
+              <p class="text-xs text-stone-600 leading-relaxed mb-4 line-clamp-3">
+                Klasifikasi tingkat kecemasan berbasis instrumen klinis GAD-7 bertenaga algoritma Support Vector Machine linear kernel pada 554 responden.
+              </p>
+
+              <!-- Academic Metadata Box -->
+              <div class="bg-stone-200/60 rounded-xl p-3 border border-stone-300/70 mb-4 space-y-2 text-[11px] font-mono">
+                <div>
+                  <span class="text-stone-500 font-bold uppercase text-[9px] block">PENELITI &amp; INSTITUSI</span>
+                  <span class="text-stone-800 font-medium">Dian Tri Yuniarti, S.Kom. · Universitas Pamulang</span>
+                </div>
+                <div class="flex items-center justify-between pt-1.5 border-t border-stone-300/60 text-[10px]">
+                  <span class="text-stone-500 font-bold uppercase text-[9px]">HASIL MODEL</span>
+                  <span class="text-rose-700 font-bold">Macro F1 99,19% · Akurasi 98,20%</span>
+                </div>
               </div>
             </div>
-            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 border border-stone-300 text-[10px] font-mono font-bold">
-                    OKTAL JOURNAL
-                  </span>
-                  <span class="text-[11px] font-mono text-stone-600 font-semibold">Vol. 4, No. 5</span>
-                </div>
-                <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2">
-                  Perancangan Aplikasi Web Stok Opname Gudang pada Kopiluvium
-                </h3>
-                <p class="text-xs text-stone-600 line-clamp-3 leading-relaxed mb-3">
-                  Digitalisasi pencatatan stok bahan baku kafe menggunakan metode Waterfall untuk mengeliminasi selisih fisik barang di gudang.
-                </p>
-                <div class="text-[11px] font-mono text-stone-500 mb-4 bg-stone-200/50 p-2 rounded border border-stone-300/60">
-                  <span class="text-stone-400 block text-[9px] uppercase font-bold">PENULIS:</span>
-                  Yuniarti, D. T., Alfitra, R., Prasetya, R. N., &amp; Saprudin
-                </div>
-              </div>
-              <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
-                <a href="https://journal.mediapublikasi.id/index.php/oktal" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
-                  <span>Buka Jurnal ↗</span>
-                </a>
-                <button onclick="openModal('modal-kopiluvium')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-stone-700 bg-stone-200 hover:bg-stone-300 border border-stone-300 transition cursor-pointer">
-                  <span>Detail Arsip</span>
-                </button>
-              </div>
+
+            <!-- Bottom Actions -->
+            <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
+              <a href="https://github.com/diantriyuniarti/anxietycheck-svm-gad7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
+                <span>Source Code ↗</span>
+              </a>
+              <button onclick="openModal('modal-anxiety')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-stone-700 bg-stone-200 hover:bg-stone-300 border border-stone-300 transition cursor-pointer">
+                <span>Detail Riset</span>
+              </button>
             </div>
           </div>
 
-          <!-- CARD 2: AnxietyCheck Machine Learning -->
-          <div class="snap-start shrink-0 w-[290px] sm:w-[350px] md:w-[380px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-xl overflow-hidden flex flex-col justify-between hover:border-stone-400 transition-all duration-300 group">
-            <div class="p-2.5 sm:p-3 bg-[#f2ece1] border-b border-stone-300/80">
-              <div class="w-full h-48 sm:h-54 rounded-xl overflow-hidden bg-white border border-stone-300/80 shadow-2xs">
-                <img src="assets/images/ss_anxiety.png" alt="AnxietyCheck Machine Learning System" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
+          <!-- CARD 2: Kopiluvium Stock Opname (Jurnal OKTAL) -->
+          <div class="snap-start shrink-0 w-[300px] sm:w-[360px] md:w-[390px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-lg hover:shadow-2xl hover:border-stone-400 transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 group">
+            <div>
+              <!-- Top Category Bar -->
+              <div class="flex items-center justify-between gap-2 pb-3 mb-3.5 border-b border-stone-300/80">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-stone-600"></span>
+                  <span class="text-[10px] font-mono font-bold tracking-wider text-stone-800 uppercase">
+                    JURNAL OKTAL · VOL. 4, NO. 5
+                  </span>
+                </div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-stone-200 text-stone-700 border border-stone-300">
+                  2025
+                </span>
               </div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mt-2 px-1">
-                <span>// SKRIPSI · SINTA ACCREDITED</span>
-                <span>2026</span>
+
+              <!-- Title -->
+              <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2.5 group-hover:text-rose-950 transition">
+                Perancangan Aplikasi Web Stok Opname Gudang pada Kopiluvium
+              </h3>
+
+              <!-- Excerpt -->
+              <p class="text-xs text-stone-600 leading-relaxed mb-4 line-clamp-3">
+                Digitalisasi pencatatan stok bahan baku kafe menggunakan metode Waterfall untuk mengeliminasi selisih fisik inventaris dan pembukuan barang di gudang.
+              </p>
+
+              <!-- Academic Metadata Box -->
+              <div class="bg-stone-200/60 rounded-xl p-3 border border-stone-300/70 mb-4 space-y-2 text-[11px] font-mono">
+                <div>
+                  <span class="text-stone-500 font-bold uppercase text-[9px] block">TIM PENULIS</span>
+                  <span class="text-stone-800 font-medium">Yuniarti, D. T., Alfitra, R., Prasetya, R. N., &amp; Saprudin</span>
+                </div>
+                <div class="flex items-center justify-between pt-1.5 border-t border-stone-300/60 text-[10px]">
+                  <span class="text-stone-500 font-bold uppercase text-[9px]">METODE &amp; TEKNOLOGI</span>
+                  <span class="text-stone-800 font-medium">Waterfall · PHP &amp; MySQL</span>
+                </div>
               </div>
             </div>
-            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 border border-stone-300 text-[10px] font-mono font-bold">
-                    JURNAL J-INTECH (SINTA)
-                  </span>
-                  <span class="text-[11px] font-mono text-stone-600 font-semibold">Macro F1 99,19%</span>
-                </div>
-                <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2">
-                  AnxietyCheck: Sistem Skrining Kecemasan Dini Menggunakan SVM
-                </h3>
-                <p class="text-xs text-stone-600 line-clamp-3 leading-relaxed mb-3">
-                  Klasifikasi tingkat kecemasan berbasis instrumen medis baku GAD-7 bertenaga algoritma Support Vector Machine linear kernel pada 554 responden.
-                </p>
-                <div class="text-[11px] font-mono text-stone-500 mb-4 bg-stone-200/50 p-2 rounded border border-stone-300/60">
-                  <span class="text-stone-400 block text-[9px] uppercase font-bold">PENELITI:</span>
-                  Dian Tri Yuniarti, S.Kom. · Universitas Pamulang
-                </div>
-              </div>
-              <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
-                <a href="https://github.com/diantriyuniarti/anxietycheck-svm-gad7" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
-                  <span>Source Code ↗</span>
-                </a>
-                <button onclick="openModal('modal-anxiety')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-stone-700 bg-stone-200 hover:bg-stone-300 border border-stone-300 transition cursor-pointer">
-                  <span>Detail Riset</span>
-                </button>
-              </div>
+
+            <!-- Bottom Actions -->
+            <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
+              <a href="https://journal.mediapublikasi.id/index.php/oktal" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
+                <span>Buka Jurnal ↗</span>
+              </a>
+              <button onclick="openModal('modal-kopiluvium')" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-stone-700 bg-stone-200 hover:bg-stone-300 border border-stone-300 transition cursor-pointer">
+                <span>Detail Arsip</span>
+              </button>
             </div>
           </div>
 
-          <!-- CARD 3: WASPAS DSS -->
-          <div class="snap-start shrink-0 w-[290px] sm:w-[350px] md:w-[380px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-xl overflow-hidden flex flex-col justify-between hover:border-stone-400 transition-all duration-300 group">
-            <div class="p-2.5 sm:p-3 bg-[#f2ece1] border-b border-stone-300/80">
-              <div class="w-full h-48 sm:h-54 rounded-xl overflow-hidden bg-white border border-stone-300/80 shadow-2xs">
-                <img src="assets/images/ss_automata.png" alt="Decision Support System Model" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
+          <!-- CARD 3: WASPAS DSS (Jurnal FASILKOM) -->
+          <div class="snap-start shrink-0 w-[300px] sm:w-[360px] md:w-[390px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-lg hover:shadow-2xl hover:border-stone-400 transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 group">
+            <div>
+              <!-- Top Category Bar -->
+              <div class="flex items-center justify-between gap-2 pb-3 mb-3.5 border-b border-stone-300/80">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-stone-600"></span>
+                  <span class="text-[10px] font-mono font-bold tracking-wider text-stone-800 uppercase">
+                    JURNAL FASILKOM · VOL. 15, NO. 3
+                  </span>
+                </div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-stone-200 text-stone-700 border border-stone-300">
+                  2025
+                </span>
               </div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mt-2 px-1">
-                <span>// SISTEM PENDUKUNG KEPUTUSAN</span>
-                <span>2025</span>
+
+              <!-- Title -->
+              <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2.5 group-hover:text-rose-950 transition">
+                Penerapan Metode WASPAS Klasifikasi Pola Belajar Mahasiswa
+              </h3>
+
+              <!-- Excerpt -->
+              <p class="text-xs text-stone-600 leading-relaxed mb-4 line-clamp-3">
+                Kombinasi model linier WSM dan perkalian eksponensial WPM untuk menentukan pola belajar mahasiswa secara adaptif dan objektif.
+              </p>
+
+              <!-- Academic Metadata Box -->
+              <div class="bg-stone-200/60 rounded-xl p-3 border border-stone-300/70 mb-4 space-y-2 text-[11px] font-mono">
+                <div>
+                  <span class="text-stone-500 font-bold uppercase text-[9px] block">TIM PENULIS</span>
+                  <span class="text-stone-800 font-medium">Ester, R., Yuniarti, D. T., Valentina, P. E., &amp; Putra, F. M. K.</span>
+                </div>
+                <div class="flex items-center justify-between pt-1.5 border-t border-stone-300/60 text-[10px]">
+                  <span class="text-stone-500 font-bold uppercase text-[9px]">BIDANG</span>
+                  <span class="text-stone-800 font-medium">Decision Support System (MCDM)</span>
+                </div>
               </div>
             </div>
-            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 border border-stone-300 text-[10px] font-mono font-bold">
-                    JURNAL FASILKOM
-                  </span>
-                  <span class="text-[11px] font-mono text-stone-600 font-semibold">Vol. 15, No. 3</span>
-                </div>
-                <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2">
-                  Penerapan Metode WASPAS Klasifikasi Pola Belajar Mahasiswa
-                </h3>
-                <p class="text-xs text-stone-600 line-clamp-3 leading-relaxed mb-3">
-                  Kombinasi model linier WSM dan perkalian eksponensial WPM untuk menentukan pola belajar mahasiswa secara adaptif dan objektif.
-                </p>
-                <div class="text-[11px] font-mono text-stone-500 mb-4 bg-stone-200/50 p-2 rounded border border-stone-300/60">
-                  <span class="text-stone-400 block text-[9px] uppercase font-bold">TIM PENULIS:</span>
-                  Ester, R., Yuniarti, D. T., Valentina, P. E., &amp; Putra, F. M. K.
-                </div>
-              </div>
-              <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
-                <a href="https://ejurnal.umri.ac.id/index.php/JIK/" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
-                  <span>Buka Jurnal ↗</span>
-                </a>
-                <a href="https://scholar.google.com/scholar?q=Analisis+Penerapan+Metode+WASPAS+untuk+Penentuan+Pola+Belajar+Mahasiswa+Berdasarkan+Gaya+Belajar" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-stone-700 bg-stone-200 hover:bg-stone-300 border border-stone-300 transition">
-                  <span>Google Scholar</span>
-                </a>
-              </div>
+
+            <!-- Bottom Actions -->
+            <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
+              <a href="https://ejurnal.umri.ac.id/index.php/JIK/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
+                <span>Buka Jurnal ↗</span>
+              </a>
+              <a href="https://scholar.google.com/scholar?q=Analisis+Penerapan+Metode+WASPAS+untuk+Penentuan+Pola+Belajar+Mahasiswa+Berdasarkan+Gaya+Belajar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-stone-700 bg-stone-200 hover:bg-stone-300 border border-stone-300 transition">
+                <span>Google Scholar</span>
+              </a>
             </div>
           </div>
 
           <!-- CARD 4: AI & Vokasi (JUTECH · SINTA 5) -->
-          <div class="snap-start shrink-0 w-[290px] sm:w-[350px] md:w-[380px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-xl overflow-hidden flex flex-col justify-between hover:border-stone-400 transition-all duration-300 group">
-            <div class="p-2.5 sm:p-3 bg-[#f2ece1] border-b border-stone-300/80">
-              <div class="w-full h-48 sm:h-54 rounded-xl overflow-hidden bg-white border border-stone-300/80 shadow-2xs">
-                <img src="assets/images/peksimida_unsrat.jpg" alt="Pendidikan Vokasi dan AI" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
+          <div class="snap-start shrink-0 w-[300px] sm:w-[360px] md:w-[390px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-lg hover:shadow-2xl hover:border-stone-400 transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 group">
+            <div>
+              <!-- Top Category Bar -->
+              <div class="flex items-center justify-between gap-2 pb-3 mb-3.5 border-b border-stone-300/80">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-rose-600"></span>
+                  <span class="text-[10px] font-mono font-bold tracking-wider text-rose-700 uppercase">
+                    JUTECH · TERAKREDITASI SINTA 5
+                  </span>
+                </div>
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-stone-200 text-stone-700 border border-stone-300">
+                  2025
+                </span>
               </div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mt-2 px-1">
-                <span>// SINTA 5 ACCREDITED</span>
-                <span>2025</span>
+
+              <!-- Title -->
+              <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2.5 group-hover:text-rose-950 transition">
+                Integrasi TI dan AI dalam Menyiapkan Siswa Vokasi Industri Digital
+              </h3>
+
+              <!-- Excerpt -->
+              <p class="text-xs text-stone-600 leading-relaxed mb-4 line-clamp-3">
+                Kajian empiris integrasi perkakas kecerdasan buatan generatif ke dalam kurikulum komputasi kejuruan nasional.
+              </p>
+
+              <!-- Academic Metadata Box -->
+              <div class="bg-stone-200/60 rounded-xl p-3 border border-stone-300/70 mb-4 space-y-2 text-[11px] font-mono">
+                <div>
+                  <span class="text-stone-500 font-bold uppercase text-[9px] block">TIM PENULIS</span>
+                  <span class="text-stone-800 font-medium">Suhada, J., Ardana, I. M. S., Yuniarti, D. T., &amp; Rizky, M.</span>
+                </div>
+                <div class="flex items-center justify-between pt-1.5 border-t border-stone-300/60 text-[10px]">
+                  <span class="text-stone-500 font-bold uppercase text-[9px]">FOKUS RISET</span>
+                  <span class="text-stone-800 font-medium">Artificial Intelligence &amp; Kurikulum</span>
+                </div>
               </div>
             </div>
-            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 border border-stone-300 text-[10px] font-mono font-bold">
-                    JUTECH · SINTA 5
-                  </span>
-                  <span class="text-[11px] font-mono text-stone-600 font-semibold">Vol. 6, No. 2</span>
-                </div>
-                <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2">
-                  Integrasi TI dan AI dalam Menyiapkan Siswa Vokasi Industri Digital
-                </h3>
-                <p class="text-xs text-stone-600 line-clamp-3 leading-relaxed mb-3">
-                  Kajian empiris integrasi perkakas kecerdasan buatan generatif ke dalam kurikulum komputasi kejuruan nasional.
-                </p>
-                <div class="text-[11px] font-mono text-stone-500 mb-4 bg-stone-200/50 p-2 rounded border border-stone-300/60">
-                  <span class="text-stone-400 block text-[9px] uppercase font-bold">TIM PENULIS:</span>
-                  Suhada, J., Ardana, I. M. S., Yuniarti, D. T., &amp; Rizky, M.
-                </div>
-              </div>
-              <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
-                <a href="https://doi.org/10.31932/jutech.v6i2.5045" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
-                  <span>Buka DOI ↗</span>
-                </a>
-                <a href="https://jurnal.stkippersada.ac.id/jurnal/index.php/jutech/article/view/5045" target="_blank" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-stone-700 bg-stone-200 hover:bg-stone-300 border border-stone-300 transition">
-                  <span>Portal OJS</span>
-                </a>
-              </div>
+
+            <!-- Bottom Actions -->
+            <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
+              <a href="https://doi.org/10.31932/jutech.v6i2.5045" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
+                <span>Buka DOI ↗</span>
+              </a>
+              <a href="https://jurnal.stkippersada.ac.id/jurnal/index.php/jutech/article/view/5045" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-stone-700 bg-stone-200 hover:bg-stone-300 border border-stone-300 transition">
+                <span>Portal OJS</span>
+              </a>
             </div>
           </div>
 
           <!-- CARD 5: Keamanan Jaringan LMS (JKKI) -->
-          <div class="snap-start shrink-0 w-[290px] sm:w-[350px] md:w-[380px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-xl overflow-hidden flex flex-col justify-between hover:border-stone-400 transition-all duration-300 group">
-            <div class="p-2.5 sm:p-3 bg-[#f2ece1] border-b border-stone-300/80">
-              <div class="w-full h-48 sm:h-54 rounded-xl overflow-hidden bg-white border border-stone-300/80 shadow-2xs">
-                <img src="assets/images/ss_geoattendance.png" alt="Audit Keamanan Web E-Learning" class="w-full h-full object-cover object-top group-hover:scale-105 transition duration-500" />
-              </div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mt-2 px-1">
-                <span>// CYBERSECURITY AUDIT</span>
-                <span>2023</span>
-              </div>
-            </div>
-            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 border border-stone-300 text-[10px] font-mono font-bold">
-                    JKKI JOURNAL
+          <div class="snap-start shrink-0 w-[300px] sm:w-[360px] md:w-[390px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-lg hover:shadow-2xl hover:border-stone-400 transition-all duration-300 flex flex-col justify-between p-5 sm:p-6 group">
+            <div>
+              <!-- Top Category Bar -->
+              <div class="flex items-center justify-between gap-2 pb-3 mb-3.5 border-b border-stone-300/80">
+                <div class="flex items-center gap-1.5">
+                  <span class="w-1.5 h-1.5 rounded-full bg-stone-600"></span>
+                  <span class="text-[10px] font-mono font-bold tracking-wider text-stone-800 uppercase">
+                    JKKI JOURNAL · VOL. 14, NO. 1
                   </span>
-                  <span class="text-[11px] font-mono text-stone-600 font-semibold">Vol. 14, No. 1</span>
                 </div>
-                <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2">
-                  Analisis Celah Keamanan Aplikasi Web E-Learning Kampus
-                </h3>
-                <p class="text-xs text-stone-600 line-clamp-3 leading-relaxed mb-3">
-                  Vulnerability assessment terhadap portal akademik perguruan tinggi untuk mengidentifikasi celah sanitasi input dan manajemen sesi.
-                </p>
-                <div class="text-[11px] font-mono text-stone-500 mb-4 bg-stone-200/50 p-2 rounded border border-stone-300/60">
-                  <span class="text-stone-400 block text-[9px] uppercase font-bold">TIM PENULIS:</span>
-                  Kumalasari, I., Yuniarti, D. T., Indriani, R., Rizky, M., &amp; Gea, K.
-                </div>
-              </div>
-              <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
-                <a href="https://scholar.google.com/scholar?q=Analisis+Celah+Keamanan+Aplikasi+Web+E-Learning+Universitas+Pamulang+Dian+Tri+Yuniarti" target="_blank" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
-                  <span>Google Scholar ↗</span>
-                </a>
-                <span class="text-[10px] font-mono text-stone-500 px-2 py-1 bg-stone-200 rounded">
-                  Audit LMS
+                <span class="px-2 py-0.5 rounded text-[10px] font-mono font-semibold bg-stone-200 text-stone-700 border border-stone-300">
+                  2023
                 </span>
               </div>
-            </div>
-          </div>
 
-          <!-- CARD 6: Poster Budaya Nusantara (Penghargaan Nasional UNY) -->
-          <div class="snap-start shrink-0 w-[290px] sm:w-[350px] md:w-[380px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-xl overflow-hidden flex flex-col justify-between hover:border-stone-400 transition-all duration-300 group">
-            <div class="p-2.5 sm:p-3 bg-[#f2ece1] border-b border-stone-300/80">
-              <div class="w-full h-48 sm:h-54 rounded-xl overflow-hidden bg-white border border-stone-300/80 shadow-2xs flex items-center justify-center">
-                <img src="assets/images/poster_nusantara.jpg" alt="Poster Nusantara Juara Nasional UNY" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
-              </div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mt-2 px-1">
-                <span>// PENGHARGAAN NASIONAL</span>
-                <span>2023</span>
-              </div>
-            </div>
-            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 border border-stone-300 text-[10px] font-mono font-bold">
-                    FSPI UNY 2023
-                  </span>
-                  <span class="text-[11px] font-mono text-stone-600 font-semibold">Juara Harapan 1</span>
-                </div>
-                <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2">
-                  Poster Advokasi: Merawat Warisan Budaya Nusantara
-                </h3>
-                <p class="text-xs text-stone-600 line-clamp-3 leading-relaxed mb-3">
-                  Karya desain poster advokasi budaya nasional peraih Juara Harapan 1 (Peringkat 4 Nasional) pada Festival Seni dan Pendidikan Ilmiah UNY.
-                </p>
-                <div class="text-[11px] font-mono text-stone-500 mb-4 bg-stone-200/50 p-2 rounded border border-stone-300/60">
-                  <span class="text-stone-400 block text-[9px] uppercase font-bold">DESAINER:</span>
-                  Dian Tri Yuniarti · Adobe Illustrator
-                </div>
-              </div>
-              <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
-                <button onclick="openModal('modal-poster')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs cursor-pointer">
-                  <span>Lihat Poster Penuh</span>
-                </button>
-                <span class="text-[10px] font-mono text-stone-500 px-2 py-1 bg-stone-200 rounded">
-                  Tingkat Nasional
-                </span>
-              </div>
-            </div>
-          </div>
+              <!-- Title -->
+              <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2.5 group-hover:text-rose-950 transition">
+                Analisis Celah Keamanan Aplikasi Web E-Learning Kampus
+              </h3>
 
-          <!-- CARD 7: PMM 4 UNSRAT -->
-          <div class="snap-start shrink-0 w-[290px] sm:w-[350px] md:w-[380px] rounded-2xl bg-[#faf7f0] text-stone-900 border border-stone-300 shadow-xl overflow-hidden flex flex-col justify-between hover:border-stone-400 transition-all duration-300 group">
-            <div class="p-2.5 sm:p-3 bg-[#f2ece1] border-b border-stone-300/80">
-              <div class="w-full h-48 sm:h-54 rounded-xl overflow-hidden bg-white border border-stone-300/80 shadow-2xs flex items-center justify-center">
-                <img src="assets/images/pmm_unsrat_studio.jpg" alt="PMM Batch 4 UNSRAT" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" />
-              </div>
-              <div class="flex items-center justify-between text-[10px] font-mono text-stone-500 mt-2 px-1">
-                <span>// PROGRAM KEMENDIKBUDRISTEK</span>
-                <span>2024</span>
+              <!-- Excerpt -->
+              <p class="text-xs text-stone-600 leading-relaxed mb-4 line-clamp-3">
+                Vulnerability assessment terhadap portal akademik perguruan tinggi untuk mengidentifikasi celah sanitasi input dan manajemen sesi.
+              </p>
+
+              <!-- Academic Metadata Box -->
+              <div class="bg-stone-200/60 rounded-xl p-3 border border-stone-300/70 mb-4 space-y-2 text-[11px] font-mono">
+                <div>
+                  <span class="text-stone-500 font-bold uppercase text-[9px] block">TIM PENULIS</span>
+                  <span class="text-stone-800 font-medium">Kumalasari, I., Yuniarti, D. T., Indriani, R., Rizky, M., &amp; Gea, K.</span>
+                </div>
+                <div class="flex items-center justify-between pt-1.5 border-t border-stone-300/60 text-[10px]">
+                  <span class="text-stone-500 font-bold uppercase text-[9px]">FOKUS AUDIT</span>
+                  <span class="text-stone-800 font-medium">Cybersecurity &amp; Vulnerability</span>
+                </div>
               </div>
             </div>
-            <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
-              <div>
-                <div class="flex items-center justify-between gap-2 mb-2">
-                  <span class="px-2 py-0.5 rounded bg-stone-200 text-stone-800 border border-stone-300 text-[10px] font-mono font-bold">
-                    PMM BATCH 4
-                  </span>
-                  <span class="text-[11px] font-mono text-stone-600 font-semibold">UNSRAT Manado</span>
-                </div>
-                <h3 class="text-base sm:text-lg font-bold font-serif-academic text-stone-900 leading-snug mb-2">
-                  Dokumentasi Pertukaran Mahasiswa di UNSRAT Manado
-                </h3>
-                <p class="text-xs text-stone-600 line-clamp-3 leading-relaxed mb-3">
-                  Studi akademik 1 semester penuh di Universitas Sam Ratulangi, 16 Modul Nusantara, serta partisipasi PEKSIMIDA Sulawesi Utara 2024.
-                </p>
-                <div class="text-[11px] font-mono text-stone-500 mb-4 bg-stone-200/50 p-2 rounded border border-stone-300/60">
-                  <span class="text-stone-400 block text-[9px] uppercase font-bold">DELEGASI:</span>
-                  Dian Tri Yuniarti · Universitas Pamulang
-                </div>
-              </div>
-              <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
-                <button onclick="openModal('modal-pmm')" class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs cursor-pointer">
-                  <span>Galeri Lapangan</span>
-                </button>
-                <span class="text-[10px] font-mono text-stone-500 px-2 py-1 bg-stone-200 rounded">
-                  Dokumentasi Resmi
-                </span>
-              </div>
+
+            <!-- Bottom Actions -->
+            <div class="pt-3 border-t border-stone-300/80 flex items-center justify-between gap-2">
+              <a href="https://scholar.google.com/scholar?q=Analisis+Celah+Keamanan+Aplikasi+Web+E-Learning+Universitas+Pamulang+Dian+Tri+Yuniarti" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 text-stone-50 hover:bg-black transition shadow-xs">
+                <span>Google Scholar ↗</span>
+              </a>
+              <span class="text-[10px] font-mono text-stone-500 px-2 py-1 bg-stone-200 rounded">
+                Audit LMS
+              </span>
             </div>
           </div>
 
         </div>
 
         <!-- Hint Footer -->
-        <div class="mt-3 flex items-center justify-between text-[11px] font-mono text-stone-500 px-1">
+        <div class="mt-3 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-stone-500 px-1">
           <div class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse"></span>
-            <span>Geser kartu atau gunakan tombol panah untuk menjelajah arsip</span>
+            <span class="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse shrink-0"></span>
+            <span>Geser kartu atau gunakan tombol panah untuk membaca arsip</span>
           </div>
-          <span class="hidden sm:inline">// 7 DOKUMEN RISET &amp; PUBLIKASI TERVERIFIKASI</span>
+          <span class="hidden sm:inline">// 5 PUBLIKASI ILMIAH TERVERIFIKASI</span>
         </div>
 
       </div>
