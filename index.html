@@ -2391,78 +2391,113 @@
     </div>
   </div>
 
-  <!-- MODAL 3: UI Apotek -->
-  <div id="modal-apotek" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-3xl lg:max-w-4xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+    <!-- MODAL 3: UI Apotek (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-apotek" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-3xl lg:max-w-4xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[-0.6deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// PROTOTIPE FIGMA · PMM 4 UNSRAT · 2024</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Apotik: Desain Antarmuka Administrasi Farmasi & Klinik</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Prototipe UI/UX Interaktif High-Fidelity · Universitas Sam Ratulangi</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// PROTOTIPE FIGMA · PMM 4 UNSRAT · 2024</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Apotik: Desain Antarmuka Administrasi Farmasi &amp; Klinik
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Prototipe UI/UX Interaktif High-Fidelity · Universitas Sam Ratulangi
+          </p>
         </div>
-        <button onclick="closeModal('modal-apotek')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-apotek')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
         <!-- Mounted Frame & Prototype Screen Selector -->
         <div>
-          <div class="text-[11px] font-mono uppercase tracking-wider text-stone-500 mb-2 font-semibold">// PRATINJAU LAYAR INTERAKTIF</div>
-          <div class="rounded-xl border border-stone-300/90 bg-white p-2 sm:p-2.5 shadow-sm">
-            <div class="w-full h-64 sm:h-84 md:h-96 rounded-lg overflow-hidden bg-stone-100 flex items-center justify-center border border-stone-200/80">
+          <div class="flex items-center justify-between text-[11px] font-mono text-stone-500 mb-2 px-1">
+            <span>// PRATINJAU LAYAR INTERAKTIF</span>
+            <span class="hidden sm:inline">Pilih modul antarmuka:</span>
+          </div>
+
+          <div class="relative bg-white p-3 sm:p-4 border border-stone-300 shadow-sm">
+            <!-- Corner tape tabs -->
+            <div class="absolute -top-2 -left-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+            <div class="absolute -top-2 -right-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+
+            <div class="w-full h-64 sm:h-84 md:h-96 bg-stone-100 flex items-center justify-center border border-stone-200 overflow-hidden">
               <img id="apotekModalMain" src="assets/images/ss_apotek.png" alt="Pratinjau Prototipe Apotik Figma" class="w-full h-full object-cover object-top transition duration-200" />
             </div>
           </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mt-3">
-            <button onclick="document.getElementById('apotekModalMain').src='assets/images/ss_apotek.png'" class="p-3 rounded-lg bg-white border border-stone-300 hover:border-stone-800 text-left transition flex items-center gap-3 shadow-2xs">
-              <span class="w-3 h-3 rounded-full bg-stone-900 shrink-0"></span>
+
+          <!-- Screen Selector Buttons (Tactile Paper Cards) -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3 mt-3">
+            <button onclick="document.getElementById('apotekModalMain').src='assets/images/ss_apotek.png'" class="p-3 bg-white border border-stone-300 hover:border-stone-900 text-left transition flex items-center gap-3 shadow-2xs cursor-pointer">
+              <span class="w-2.5 h-2.5 bg-stone-900 shrink-0"></span>
               <div>
-                <div class="font-mono text-xs font-bold text-stone-900">1. Master Data Obat & Input Batch</div>
-                <div class="text-[11px] text-stone-500">Form input, tanggal kedaluwarsa & tabel obat</div>
+                <div class="font-mono text-xs font-bold text-stone-900">1. Master Data Obat &amp; Input Batch</div>
+                <div class="text-[11px] text-stone-500 font-mono mt-0.5">Form input, tanggal kedaluwarsa &amp; tabel obat</div>
               </div>
             </button>
-            <button onclick="document.getElementById('apotekModalMain').src='assets/images/ss_apotek_security.png'" class="p-3 rounded-lg bg-white border border-stone-300 hover:border-stone-800 text-left transition flex items-center gap-3 shadow-2xs">
-              <span class="w-3 h-3 rounded-full bg-stone-500 shrink-0"></span>
+            <button onclick="document.getElementById('apotekModalMain').src='assets/images/ss_apotek_security.png'" class="p-3 bg-white border border-stone-300 hover:border-stone-900 text-left transition flex items-center gap-3 shadow-2xs cursor-pointer">
+              <span class="w-2.5 h-2.5 bg-stone-400 shrink-0"></span>
               <div>
-                <div class="font-mono text-xs font-bold text-stone-900">2. Keamanan & Enkripsi Data Medis</div>
-                <div class="text-[11px] text-stone-500">Node 14:5319 · Kebijakan proteksi rekam medis</div>
+                <div class="font-mono text-xs font-bold text-stone-900">2. Keamanan &amp; Enkripsi Data Medis</div>
+                <div class="text-[11px] text-stone-500 font-mono mt-0.5">Node 14:5319 · Kebijakan proteksi rekam medis</div>
               </div>
             </button>
           </div>
         </div>
 
-        <!-- Concept & UX Intent -->
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-2">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// TUJUAN PERANCANGAN & ALUR KERJA FARMASI</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+        <!-- Concept & UX Intent (Paper Slip with Tape) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.2deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ TUJUAN PERANCANGAN &amp; ALUR KERJA FARMASI ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
             Dibuat selama masa studi pertukaran mahasiswa di Manado, prototipe ini berfokus pada efisiensi operasional petugas klinik. Antarmuka memadukan kecepatan input resep obat dengan kontrol kepatuhan ketat, mencegah kesalahan pengambilan sediaan dan memastikan masa simpan obat terpantau sebelum diserahkan ke pasien.
           </p>
         </div>
 
-        <!-- Key Flow Points -->
-        <div class="space-y-2.5">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// DETAIL MODUL INTERAKSI</div>
-          <ul class="space-y-2 text-stone-700 text-xs sm:text-sm pl-4 list-disc marker:text-stone-400">
-            <li><strong>Manajemen Sediaan Obat:</strong> Form penambahan data obat lengkap dengan pengelompokan satuan (tablet, sirup, kapsul, salep), batas dosis maksimum, dan sorting tanggal batas pakai.</li>
-            <li><strong>Enkripsi & Privasi Pasien (Node 14:5319):</strong> Pengaturan toggle keamanan pada prototipe untuk mensimulasikan proteksi data riwayat berobat pasien dari akses tidak terotorisasi.</li>
-            <li><strong>Arsitektur Navigasi:</strong> Mengintegrasikan alur mulai dari antrean loket pendaftaran, kasir farmasi, pemeriksaan stok gudang, hingga laporan penjualan periodik.</li>
-          </ul>
+        <!-- Key Flow Points (Clean Paper Sheet) -->
+        <div class="relative bg-[#f5ede0] p-4 sm:p-6 border border-stone-300 shadow-xs">
+          <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-32 h-4.5 bg-[#e8dcbf]/85 border-x border-stone-300/60 rotate-[0.5deg] shadow-2xs pointer-events-none"></div>
+          
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 mb-3 border-b border-stone-300/80">
+            // DETAIL MODUL INTERAKSI &amp; ARSITEKTUR
+          </div>
+          <div class="space-y-2.5 text-stone-700 text-xs sm:text-sm">
+            <div class="p-3 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono font-bold mb-1">[1] Manajemen Sediaan Obat</strong>
+              <p class="text-stone-600 font-sans">Form penambahan data obat lengkap dengan pengelompokan satuan (tablet, sirup, kapsul, salep), batas dosis maksimum, dan sorting tanggal batas pakai.</p>
+            </div>
+            <div class="p-3 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono font-bold mb-1">[2] Enkripsi &amp; Privasi Pasien (Node 14:5319)</strong>
+              <p class="text-stone-600 font-sans">Pengaturan toggle keamanan pada prototipe untuk mensimulasikan proteksi data riwayat berobat pasien dari akses tidak terotorisasi.</p>
+            </div>
+            <div class="p-3 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono font-bold mb-1">[3] Arsitektur Navigasi Klinik</strong>
+              <p class="text-stone-600 font-sans">Mengintegrasikan alur mulai dari antrean loket pendaftaran, kasir farmasi, pemeriksaan stok gudang, hingga laporan penjualan periodik.</p>
+            </div>
+          </div>
         </div>
 
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex flex-wrap items-center justify-between gap-3 shrink-0">
-        <a href="https://www.figma.com/proto/0gUo1nnocdLRHJiVjQaClx/Apotik?node-id=14-5319&starting-point-node-id=1%3A1344&show-proto-sidebar=1&t=tPViq6WsjTAtidA5-1" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-stone-900 text-stone-50 hover:bg-black transition shadow-sm">
-          <i data-lucide="external-link" class="w-4 h-4"></i>
-          <span>Buka Prototipe Figma Interaktif</span>
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
+        <a href="https://www.figma.com/proto/0gUo1nnocdLRHJiVjQaClx/Apotik?node-id=14-5319&amp;starting-point-node-id=1%3A1344&amp;show-proto-sidebar=1&amp;t=tPViq6WsjTAtidA5-1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-900 text-stone-50 hover:bg-black transition border border-stone-900">
+          <span>Buka Prototipe Figma ↗</span>
         </a>
-        <button onclick="closeModal('modal-apotek')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+        <button onclick="closeModal('modal-apotek')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2470,38 +2505,57 @@
     </div>
   </div>
 
-  <!-- MODAL 4: Poster Nasional FSPI UNY -->
-  <div id="modal-poster" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 4: Poster Nasional FSPI UNY (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-poster" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[0.8deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// PENGHARGAAN NASIONAL · FSPI UNY · 2023</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Poster Advokasi: Merawat Warisan Budaya Nusantara</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Juara Harapan 1 (Peringkat 4 Nasional) · Festival Seni & Pendidikan Ilmiah UNY</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// PENGHARGAAN NASIONAL · FSPI UNY · 2023</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Poster Advokasi: Merawat Warisan Budaya Nusantara
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Juara Harapan 1 (Peringkat 4 Nasional) · Festival Seni &amp; Pendidikan Ilmiah UNY
+          </p>
         </div>
-        <button onclick="closeModal('modal-poster')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-poster')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-5 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
-        <!-- Mounted Artwork Print -->
-        <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 sm:p-3 shadow-sm text-center">
-          <img src="assets/images/poster_nusantara.jpg" alt="Karya Desain Poster Nusantara FSPI UNY" class="max-h-[55vh] w-auto mx-auto object-contain rounded-lg border border-stone-200/80" />
-          <div class="text-[11px] font-mono text-stone-500 mt-2">// Karya Desain Poster Kompetisi Nasional FSPI Universitas Negeri Yogyakarta</div>
+        <!-- Mounted Artwork Print with Corner Tape -->
+        <div class="relative bg-white p-3 sm:p-4 border border-stone-300 shadow-sm text-center">
+          <!-- Corner tape tabs -->
+          <div class="absolute -top-2 -left-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+          <div class="absolute -top-2 -right-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+
+          <div class="max-h-[55vh] flex items-center justify-center bg-stone-100 border border-stone-200 overflow-hidden">
+            <img src="assets/images/poster_nusantara.jpg" alt="Karya Desain Poster Nusantara FSPI UNY" class="max-h-[55vh] w-auto mx-auto object-contain" />
+          </div>
+          <div class="text-[11px] font-mono text-stone-500 mt-2.5">// Karya Desain Poster Kompetisi Nasional FSPI Universitas Negeri Yogyakarta</div>
         </div>
 
-        <!-- Descriptive Context -->
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-2">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// KONSEP KARYA & PROSES KREATIF</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+        <!-- Concept & Creative Process Note (Paper Slip with Tape) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-3">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.5deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ KONSEP KARYA &amp; PROSES KREATIF ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
             Karya visual ini mengangkat tema pelestarian warisan budaya di tengah arus modernisasi. Mengombinasikan ilustrasi ragam hias etnik tradisional Indonesia (motif batik parang, ornamen wayang, dan flora khas nusantara) dengan komposisi tipografi modern dan palet warna bumi yang berwibawa.
           </p>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
             Dirancang secara presisi menggunakan perangkat lunak Adobe Illustrator, karya ini berhasil meraih predikat <strong>Juara Harapan 1 (Peringkat 4 Nasional)</strong> pada ajang Festival Seni dan Pendidikan Ilmiah yang diselenggarakan oleh Universitas Negeri Yogyakarta (FSPI UNY 2023).
           </p>
         </div>
@@ -2509,9 +2563,9 @@
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex items-center justify-between gap-3 shrink-0">
-        <span class="text-xs font-mono text-stone-500">// Arsip Penghargaan & Sertifikat Resmi UNY 2023</span>
-        <button onclick="closeModal('modal-poster')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
+        <span class="text-xs font-mono text-stone-500">// Arsip Penghargaan &amp; Sertifikat Resmi UNY 2023</span>
+        <button onclick="closeModal('modal-poster')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2519,91 +2573,108 @@
     </div>
   </div>
 
-  <!-- MODAL 5: PMM Batch 4 UNSRAT Documentation -->
-  <div id="modal-pmm" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-4xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 5: PMM Batch 4 UNSRAT Documentation (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-pmm" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-4xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[-0.9deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// PROGRAM KEMENDIKBUDRISTEK · 1 SEMESTER PENUH · 2024</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Pertukaran Mahasiswa Merdeka (PMM Batch 4) · UNSRAT Manado</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Universitas Sam Ratulangi, Manado · Sulawesi Utara · Januari – Juni 2024</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// PROGRAM KEMENDIKBUDRISTEK · 1 SEMESTER PENUH · 2024</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Pertukaran Mahasiswa Merdeka (PMM Batch 4) · UNSRAT Manado
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Universitas Sam Ratulangi, Manado · Sulawesi Utara · Januari – Juni 2024
+          </p>
         </div>
-        <button onclick="closeModal('modal-pmm')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-pmm')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
         <!-- Photo Gallery (4 Authentic Mounted Photos) -->
         <div>
-          <div class="text-[11px] font-mono uppercase tracking-wider text-stone-500 mb-2 font-semibold">// DOKUMENTASI KEGIATAN & IMERSI LAPANGAN</div>
+          <div class="text-[11px] font-mono uppercase tracking-wider text-stone-500 mb-3 font-semibold">// DOKUMENTASI KEGIATAN &amp; IMERSI LAPANGAN</div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             
             <!-- Photo 1: Studio Portrait -->
-            <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-              <div class="aspect-[4/3] overflow-hidden rounded-lg bg-stone-100 border border-stone-200/80">
+            <div class="relative bg-white p-3 border border-stone-300 shadow-sm">
+              <div class="absolute -top-2 -left-2 w-10 h-3.5 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+              <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-stone-200">
                 <img src="assets/images/pmm_unsrat_studio.jpg" alt="Delegasi PMM Batch 4 UNSRAT" class="w-full h-full object-cover object-center" />
               </div>
               <div class="mt-2.5">
-                <div class="font-bold text-stone-900 text-xs">Delegasi Resmi PMM 4 UNSRAT</div>
-                <div class="text-[11px] text-stone-500 mt-0.5">Sesi foto jaket almamater PMM 4 bersama mahasiswa pertukaran dari berbagai penjuru tanah air.</div>
+                <div class="font-bold text-stone-900 text-xs font-mono">// DELEGASI RESMI PMM 4 UNSRAT</div>
+                <div class="text-[11px] text-stone-600 mt-0.5 font-sans">Sesi foto jaket almamater PMM 4 bersama mahasiswa pertukaran dari berbagai penjuru tanah air.</div>
               </div>
             </div>
 
             <!-- Photo 2: PEKSIMIDA 2024 -->
-            <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-              <div class="aspect-[4/3] overflow-hidden rounded-lg bg-stone-100 border border-stone-200/80">
+            <div class="relative bg-white p-3 border border-stone-300 shadow-sm">
+              <div class="absolute -top-2 -right-2 w-10 h-3.5 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+              <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-stone-200">
                 <img src="assets/images/peksimida_unsrat.jpg" alt="Delegasi PEKSIMIDA 2024 UNSRAT" class="w-full h-full object-cover object-center" />
               </div>
               <div class="mt-2.5">
-                <div class="font-bold text-stone-900 text-xs">Delegasi PEKSIMIDA 2024</div>
-                <div class="text-[11px] text-stone-500 mt-0.5">Terpilih mewakili kontingen pada Pekan Seni Mahasiswa Daerah Sulawesi Utara di Manado (Mei 2024).</div>
+                <div class="font-bold text-stone-900 text-xs font-mono">// DELEGASI PEKSIMIDA 2024</div>
+                <div class="text-[11px] text-stone-600 mt-0.5 font-sans">Terpilih mewakili kontingen pada Pekan Seni Mahasiswa Daerah Sulawesi Utara di Manado (Mei 2024).</div>
               </div>
             </div>
 
             <!-- Photo 3: Modul Nusantara Hall Workshop -->
-            <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-              <div class="aspect-[4/3] overflow-hidden rounded-lg bg-stone-100 border border-stone-200/80">
+            <div class="relative bg-white p-3 border border-stone-300 shadow-sm">
+              <div class="absolute -top-2 -left-2 w-10 h-3.5 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+              <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-stone-200">
                 <img src="assets/images/pmm_unsrat_hall.jpg" alt="Workshop Edukasi Anak Komunitas Manado" class="w-full h-full object-cover object-center" />
               </div>
               <div class="mt-2.5">
-                <div class="font-bold text-stone-900 text-xs">Workshop Edukasi Komunitas Anak</div>
-                <div class="text-[11px] text-stone-500 mt-0.5">Kegiatan pengabdian masyarakat dan lomba mewarnai edukatif bersama anak-anak di Manado.</div>
+                <div class="font-bold text-stone-900 text-xs font-mono">// WORKSHOP EDUKASI KOMUNITAS</div>
+                <div class="text-[11px] text-stone-600 mt-0.5 font-sans">Kegiatan pengabdian masyarakat dan lomba mewarnai edukatif bersama anak-anak di Manado.</div>
               </div>
             </div>
 
             <!-- Photo 4: Social Immersion Dining -->
-            <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-              <div class="aspect-[4/3] overflow-hidden rounded-lg bg-stone-100 border border-stone-200/80">
+            <div class="relative bg-white p-3 border border-stone-300 shadow-sm">
+              <div class="absolute -top-2 -right-2 w-10 h-3.5 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+              <div class="aspect-[4/3] overflow-hidden bg-stone-100 border border-stone-200">
                 <img src="assets/images/pmm_unsrat_dining.jpg" alt="Imersi Budaya & Makan Bersama Modul Nusantara" class="w-full h-full object-cover object-center" />
               </div>
               <div class="mt-2.5">
-                <div class="font-bold text-stone-900 text-xs">Imersi Sosial & Makan Bersama</div>
-                <div class="text-[11px] text-stone-500 mt-0.5">Kegiatan kebersamaan lintas budaya dan silaturahmi bersama warga lokal di Sulawesi Utara.</div>
+                <div class="font-bold text-stone-900 text-xs font-mono">// IMERSI SOSIAL &amp; MAKAN BERSAMA</div>
+                <div class="text-[11px] text-stone-600 mt-0.5 font-sans">Kegiatan kebersamaan lintas budaya dan silaturahmi bersama warga lokal di Sulawesi Utara.</div>
               </div>
             </div>
 
           </div>
         </div>
 
-        <!-- Academic & Field Highlights -->
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-3">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// PENGALAMAN AKADEMIK & KONTRIBUSI MODUL NUSANTARA</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
-            Program beasiswa mobilitas mahasiswa nasional yang diselenggarakan oleh Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi (Kemendikbudristek). Mengikuti studi satu semester penuh di Fakultas Teknik Elektro & Informatika Universitas Sam Ratulangi (UNSRAT), Manado.
+        <!-- Academic & Field Highlights (Taped Paper Slip) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-3">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.2deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ PENGALAMAN AKADEMIK &amp; KONTRIBUSI MODUL NUSANTARA ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
+            Program beasiswa mobilitas mahasiswa nasional yang diselenggarakan oleh Kementerian Pendidikan, Kebudayaan, Riset, dan Teknologi (Kemendikbudristek). Mengikuti studi satu semester penuh di Fakultas Teknik Elektro &amp; Informatika Universitas Sam Ratulangi (UNSRAT), Manado.
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
-            <div class="p-3 bg-white rounded-lg border border-stone-300/80 shadow-2xs">
-              <strong class="text-stone-900 block mb-1">Mata Kuliah Komputasi Teoretis</strong>
-              <p class="text-stone-600 text-xs">Menyelesaikan perkuliahan Teori Bahasa & Automata, Matematika Diskrit, serta Perancangan Antarmuka Manusia & Komputer (IMK).</p>
+            <div class="p-3 bg-white border border-stone-300/80 shadow-2xs">
+              <strong class="text-stone-900 block font-mono font-bold text-xs mb-1">[1] Mata Kuliah Komputasi Teoretis</strong>
+              <p class="text-stone-600 text-xs font-sans">Menyelesaikan perkuliahan Teori Bahasa &amp; Automata, Matematika Diskrit, serta Perancangan Antarmuka Manusia &amp; Komputer (IMK).</p>
             </div>
-            <div class="p-3 bg-white rounded-lg border border-stone-300/80 shadow-2xs">
-              <strong class="text-stone-900 block mb-1">16 Sesi Modul Nusantara</strong>
-              <p class="text-stone-600 text-xs">Meliputi empat pilar: Kebhinekaan (eksplorasi budaya Minahasa), Inspirasi (figur tokoh lokal), Refleksi, dan Kontribusi Sosial langsung.</p>
+            <div class="p-3 bg-white border border-stone-300/80 shadow-2xs">
+              <strong class="text-stone-900 block font-mono font-bold text-xs mb-1">[2] 16 Sesi Modul Nusantara</strong>
+              <p class="text-stone-600 text-xs font-sans">Meliputi empat pilar: Kebhinekaan (eksplorasi budaya Minahasa), Inspirasi (figur tokoh lokal), Refleksi, dan Kontribusi Sosial langsung.</p>
             </div>
           </div>
         </div>
@@ -2611,9 +2682,9 @@
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex items-center justify-between gap-3 shrink-0">
-        <span class="text-xs font-mono text-stone-500">// Sertifikat & Nilai Akademik Terverifikasi Kemendikbudristek RI</span>
-        <button onclick="closeModal('modal-pmm')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
+        <span class="text-xs font-mono text-stone-500">// Sertifikat &amp; Nilai Akademik Terverifikasi Kemendikbudristek RI</span>
+        <button onclick="closeModal('modal-pmm')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2621,58 +2692,81 @@
     </div>
   </div>
 
-  <!-- MODAL 6: Automata -->
-  <div id="modal-automata" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 6: Automata (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-automata" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[0.7deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// TUGAS TEORI BAHASA & AUTOMATA · UNSRAT · 2024</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Validator Sintaks Notasi Ilmiah Berbasis Finite State Automata</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Implementasi Deterministic Finite Automaton (DFA) · Universitas Sam Ratulangi</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// TUGAS TEORI BAHASA &amp; AUTOMATA · UNSRAT · 2024</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Validator Sintaks Notasi Ilmiah Berbasis Finite State Automata
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Implementasi Deterministic Finite Automaton (DFA) · Universitas Sam Ratulangi
+          </p>
         </div>
-        <button onclick="closeModal('modal-automata')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-automata')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-5 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
-        <!-- Mounted Frame -->
-        <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-          <div class="w-full h-52 sm:h-60 rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80">
+        <!-- Mounted Frame with Corner Tape -->
+        <div class="relative bg-white p-3 sm:p-4 border border-stone-300 shadow-sm">
+          <div class="absolute -top-2 -left-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+          <div class="absolute -top-2 -right-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+
+          <div class="w-full h-52 sm:h-60 bg-stone-100 border border-stone-200 overflow-hidden">
             <img src="assets/images/ss_automata.png" alt="Pengujian Validator Automata Notasi Ilmiah" class="w-full h-full object-cover object-top" />
           </div>
-          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Antarmuka Pengujian String Bilangan & Visualisasi Transisi State</div>
+          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Antarmuka Pengujian String Bilangan &amp; Visualisasi Transisi State</div>
         </div>
 
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-2">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// FORMULASI MESIN STATUS HINGGA (DFA)</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+        <!-- Problem Context Note (Paper Slip with Tape) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.2deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ FORMULASI MESIN STATUS HINGGA (DFA) ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
             Dibangun untuk memverifikasi apakah string angka memenuhi aturan baku notasi ilmiah (seperti <code>+3.14e-10</code>, <code>-0.005E+2</code>, atau <code>6.022e23</code>) secara deterministik tanpa kesalahan ambiguitas tata bahasa.
           </p>
         </div>
 
-        <!-- State Table -->
-        <div class="p-4 rounded-xl bg-[#ede5d6] border border-stone-300/90 font-mono text-xs space-y-1.5 text-stone-800">
-          <div class="font-bold text-stone-900 mb-1">// DAFTAR TRANSISI STATUS MESIN:</div>
-          <div><span class="font-bold text-stone-900">State 0:</span> Tanda awal bilangan (+/-) atau digit pertama</div>
-          <div><span class="font-bold text-stone-900">State 1:</span> Barisan digit bilangan bulat mantissa</div>
-          <div><span class="font-bold text-stone-900">State 2:</span> Titik desimal (.) pemisah pecahan</div>
-          <div><span class="font-bold text-stone-900">State 3:</span> Digit pecahan di belakang desimal</div>
-          <div><span class="font-bold text-stone-900">State 4:</span> Simbol notasi eksponen ('e' atau 'E')</div>
-          <div><span class="font-bold text-stone-900">State 5:</span> Tanda eksponen (+/-)</div>
-          <div><span class="font-bold text-stone-900">State 6:</span> Digit nilai eksponen (Final State / Diterima)</div>
+        <!-- State Table Sheet -->
+        <div class="relative bg-[#f5ede0] p-4 sm:p-5 border border-stone-300 shadow-xs font-mono text-xs text-stone-800">
+          <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-32 h-4.5 bg-[#e8dcbf]/85 border-x border-stone-300/60 rotate-[0.5deg] shadow-2xs pointer-events-none"></div>
+
+          <div class="font-bold text-stone-900 pb-2 mb-2.5 border-b border-stone-300/80">
+            // DAFTAR TRANSISI STATUS MESIN:
+          </div>
+          <div class="space-y-1.5">
+            <div><span class="font-bold text-stone-950">[State 0]</span> Tanda awal bilangan (+/-) atau digit pertama</div>
+            <div><span class="font-bold text-stone-950">[State 1]</span> Barisan digit bilangan bulat mantissa</div>
+            <div><span class="font-bold text-stone-950">[State 2]</span> Titik desimal (.) pemisah pecahan</div>
+            <div><span class="font-bold text-stone-950">[State 3]</span> Digit pecahan di belakang desimal</div>
+            <div><span class="font-bold text-stone-950">[State 4]</span> Simbol notasi eksponen ('e' atau 'E')</div>
+            <div><span class="font-bold text-stone-950">[State 5]</span> Tanda eksponen (+/-)</div>
+            <div><span class="font-bold text-stone-950">[State 6]</span> Digit nilai eksponen (Final State / Diterima)</div>
+          </div>
         </div>
 
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex items-center justify-between gap-3 shrink-0">
-        <span class="text-xs font-mono text-stone-500">// Praktikum Teori Bahasa & Automata UNSRAT</span>
-        <button onclick="closeModal('modal-automata')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
+        <span class="text-xs font-mono text-stone-500">// Praktikum Teori Bahasa &amp; Automata UNSRAT</span>
+        <button onclick="closeModal('modal-automata')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2680,51 +2774,72 @@
     </div>
   </div>
 
-  <!-- MODAL 7: SPMB Online Portal -->
-  <div id="modal-ppdb" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 7: SPMB Online Portal (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-ppdb" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[-0.7deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// SISTEM INFORMASI AKADEMIK SEKOLAH · 2024</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Portal Penerimaan Siswa Baru (SPMB) SMAN 1 Astanajapura</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Sistem Pendaftaran Daring, Unggah Berkas & Verifikasi Jalur Masuk</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// SISTEM INFORMASI AKADEMIK SEKOLAH · 2024</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Portal Penerimaan Siswa Baru (SPMB) SMAN 1 Astanajapura
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Sistem Pendaftaran Daring, Unggah Berkas &amp; Verifikasi Jalur Masuk
+          </p>
         </div>
-        <button onclick="closeModal('modal-ppdb')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-6 h-6"></i>
+        <button onclick="closeModal('modal-ppdb')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-5 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
-        <!-- Mounted Frame -->
-        <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-          <div class="w-full h-52 sm:h-60 rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80">
+        <!-- Mounted Frame with Corner Tape -->
+        <div class="relative bg-white p-3 sm:p-4 border border-stone-300 shadow-sm">
+          <div class="absolute -top-2 -left-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+          <div class="absolute -top-2 -right-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+
+          <div class="w-full h-52 sm:h-60 bg-stone-100 border border-stone-200 overflow-hidden">
             <img src="assets/images/ss_spmb.png" alt="Portal Pendaftaran SPMB SMA Negeri 1 Astanajapura" class="w-full h-full object-cover object-top" />
           </div>
-          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Formulir Biodata Siswa & Panel Validasi Berkas Panitia</div>
+          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Formulir Biodata Siswa &amp; Panel Validasi Berkas Panitia</div>
         </div>
 
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-2">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// TUJUAN PERANCANGAN SISTEM</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+        <!-- Objective Note (Paper Slip with Tape) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.2deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ TUJUAN PERANCANGAN SISTEM ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
             Menggantikan proses pendaftaran calon siswa baru yang sebelumnya dilakukan secara manual antre di sekolah. Sistem menangani input data siswa, validasi nomor induk (NISN), upload dokumen kartu keluarga dan ijazah, hingga perangkingan nilai seleksi otomatis.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-white border border-stone-300/80 shadow-2xs space-y-2">
-          <strong class="text-stone-900 block font-mono text-xs uppercase">// STACK TEKNOLOGI YANG DIGUNAKAN</strong>
-          <p class="text-stone-600 text-xs sm:text-sm">PHP, MySQL Database Relasional, Bootstrap CSS Framework, JavaScript, dan generator dokumen bukti seleksi PDF.</p>
+        <!-- Tech Stack Sheet -->
+        <div class="relative bg-[#f5ede0] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2">
+          <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-32 h-4.5 bg-[#e8dcbf]/85 border-x border-stone-300/60 rotate-[0.5deg] shadow-2xs pointer-events-none"></div>
+          <strong class="text-stone-900 block font-mono text-xs uppercase pb-2 border-b border-stone-300/80">// STACK TEKNOLOGI YANG DIGUNAKAN</strong>
+          <p class="text-stone-700 text-xs sm:text-sm font-sans">
+            PHP, MySQL Database Relasional, Bootstrap CSS Framework, JavaScript, dan generator dokumen bukti seleksi PDF.
+          </p>
         </div>
 
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex items-center justify-between gap-3 shrink-0">
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
         <span class="text-xs font-mono text-stone-500">// Arsip Proyek Sistem SMAN 1 Astanajapura</span>
-        <button onclick="closeModal('modal-ppdb')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+        <button onclick="closeModal('modal-ppdb')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2732,56 +2847,87 @@
     </div>
   </div>
 
-  <!-- MODAL 8: Sales Invoicing -->
-  <div id="modal-sales" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 8: Sales Invoicing (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-sales" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[0.8deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// UJI KOMPETENSI BNSP · LSP INFORMATIKA · 2024</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Sistem Pencatatan Faktur Penjualan & Transaksi Kasir</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Tolok Ukur Standar Sertifikasi Kompetensi Profesi Programmer</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// UJI KOMPETENSI BNSP · LSP INFORMATIKA · 2024</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Sistem Pencatatan Faktur Penjualan &amp; Transaksi Kasir
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Tolok Ukur Standar Sertifikasi Kompetensi Profesi Programmer
+          </p>
         </div>
-        <button onclick="closeModal('modal-sales')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-sales')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-5 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
-        <!-- Mounted Frame -->
-        <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-          <div class="w-full h-52 sm:h-60 rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80">
+        <!-- Mounted Frame with Corner Tape -->
+        <div class="relative bg-white p-3 sm:p-4 border border-stone-300 shadow-sm">
+          <div class="absolute -top-2 -left-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+          <div class="absolute -top-2 -right-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+
+          <div class="w-full h-52 sm:h-60 bg-stone-100 border border-stone-200 overflow-hidden">
             <img src="assets/images/ss_faktur.png" alt="Sistem Kasir dan Faktur Penjualan" class="w-full h-full object-cover object-top" />
           </div>
-          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Form Input Transaksi Kasir, Kalkulasi Pajak & Cetak Invoice</div>
+          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Form Input Transaksi Kasir, Kalkulasi Pajak &amp; Cetak Invoice</div>
         </div>
 
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-2">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// STANDAR INTEGRITAS TRANSAKSI & KEAMANAN</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+        <!-- Problem Context Note (Paper Slip with Tape) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.2deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ STANDAR INTEGRITAS TRANSAKSI &amp; KEAMANAN ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
             Dibangun untuk menguji pemahaman prinsip database ACID (Atomicity, Consistency, Isolation, Durability) dan pengamanan query menggunakan Prepared Statements guna mencegah injeksi SQL pada alur transaksi kasir retail.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-white border border-stone-300/80 shadow-2xs space-y-2">
-          <div class="font-mono text-xs font-bold uppercase text-stone-900">// FITUR UTAMA SISTEM FAKTUR</div>
-          <ul class="list-disc pl-4 space-y-1.5 text-stone-700 text-xs sm:text-sm marker:text-stone-400">
-            <li>Katalog barang dengan pengurangan saldo stok otomatis secara real-time saat transaksi disimpan.</li>
-            <li>Perhitungan otomatis subtotal, diskon persentase, dan pajak pertambahan nilai (PPN).</li>
-            <li>Pencetakan nota atau faktur penjualan resmi berformat cetak siap pakai.</li>
-            <li>Isolasi hak akses antara akun kasir (transaksi kas) dan akun manajer keuangan (rekapitulasi laba).</li>
-          </ul>
+        <!-- Technical Features Sheet -->
+        <div class="relative bg-[#f5ede0] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2.5">
+          <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-32 h-4.5 bg-[#e8dcbf]/85 border-x border-stone-300/60 rotate-[0.5deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs font-bold uppercase text-stone-900 pb-2 border-b border-stone-300/80">// FITUR UTAMA SISTEM FAKTUR</div>
+          <div class="space-y-2 text-stone-700 text-xs sm:text-sm font-sans">
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[1] Real-Time Stock Sync</strong>
+              <p class="text-stone-600">Katalog barang dengan pengurangan saldo stok otomatis secara real-time saat transaksi disimpan.</p>
+            </div>
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[2] Otomasi Kalkulasi Pajak</strong>
+              <p class="text-stone-600">Perhitungan otomatis subtotal, diskon persentase, dan pajak pertambahan nilai (PPN).</p>
+            </div>
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[3] Cetak Faktur Siap Pakai</strong>
+              <p class="text-stone-600">Pencetakan nota atau faktur penjualan resmi berformat cetak siap pakai.</p>
+            </div>
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[4] Isolasi Hak Akses</strong>
+              <p class="text-stone-600">Isolasi hak akses antara akun kasir (transaksi kas) dan akun manajer keuangan (rekapitulasi laba).</p>
+            </div>
+          </div>
         </div>
 
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex items-center justify-between gap-3 shrink-0">
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
         <span class="text-xs font-mono text-stone-500">// Sertifikat Kompetensi Programmer BNSP Terverifikasi</span>
-        <button onclick="closeModal('modal-sales')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+        <button onclick="closeModal('modal-sales')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2789,55 +2935,83 @@
     </div>
   </div>
 
-  <!-- MODAL 9: Employee Attendance Mobile App -->
-  <div id="modal-attendance" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 9: Employee Attendance Mobile App (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-attendance" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[-0.6deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// PENGEMBANGAN NATIVE ANDROID · 2024</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Aplikasi Presensi Karyawan Mobile (GPS Geolocation & Voice)</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Aplikasi Mobile Java Native · Android Studio & SQLite</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// PENGEMBANGAN NATIVE ANDROID · 2024</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Aplikasi Presensi Karyawan Mobile (GPS Geolocation &amp; Voice)
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Aplikasi Mobile Java Native · Android Studio &amp; SQLite
+          </p>
         </div>
-        <button onclick="closeModal('modal-attendance')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-attendance')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-5 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
-        <!-- Mounted Frame -->
-        <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-          <div class="w-full h-52 sm:h-60 rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80">
+        <!-- Mounted Frame with Corner Tape -->
+        <div class="relative bg-white p-3 sm:p-4 border border-stone-300 shadow-sm">
+          <div class="absolute -top-2 -left-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+          <div class="absolute -top-2 -right-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+
+          <div class="w-full h-52 sm:h-60 bg-stone-100 border border-stone-200 overflow-hidden">
             <img src="assets/images/ss_geoattendance.png" alt="Aplikasi Presensi Mobile Geolocation" class="w-full h-full object-cover object-top" />
           </div>
-          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Antarmuka Presensi Mobile, Peta Titik Kordinat & Pengenalan Suara</div>
+          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Antarmuka Presensi Mobile, Peta Titik Kordinat &amp; Pengenalan Suara</div>
         </div>
 
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-2">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// PENCEGAHAN TITIP ABSEN & LOGISTIK LAPANGAN</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+        <!-- Problem Context Note (Paper Slip with Tape) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.2deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ PENCEGAHAN TITIP ABSEN &amp; LOGISTIK LAPANGAN ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
             Dirancang untuk memastikan presensi staf lapangan dan kantor tercatat secara akurat di lokasi kerja masing-masing tanpa manipulasi lokasi (fake GPS).
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-white border border-stone-300/80 shadow-2xs space-y-2">
-          <div class="font-mono text-xs font-bold uppercase text-stone-900">// KOMPONEN TEKNIS APLIKASI</div>
-          <ul class="list-disc pl-4 space-y-1.5 text-stone-700 text-xs sm:text-sm marker:text-stone-400">
-            <li><strong>Google Location API:</strong> Pemeriksaan batas radius koordinat GPS secara akurat sebelum tombol konfirmasi kehadiran dapat ditekan.</li>
-            <li><strong>Speech-to-Text:</strong> Fitur input catatan agenda atau alasan keterlambatan menggunakan rekaman suara langsung tanpa mengetik panjang.</li>
-            <li><strong>Offline-First SQLite:</strong> Riwayat presensi tersimpan aman di database lokal gawai saat sinyal internet minim, lalu tersinkronisasi saat terhubung kembali.</li>
-          </ul>
+        <!-- Technical Components Sheet -->
+        <div class="relative bg-[#f5ede0] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2.5">
+          <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-32 h-4.5 bg-[#e8dcbf]/85 border-x border-stone-300/60 rotate-[0.5deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs font-bold uppercase text-stone-900 pb-2 border-b border-stone-300/80">// KOMPONEN TEKNIS APLIKASI</div>
+          <div class="space-y-2 text-stone-700 text-xs sm:text-sm font-sans">
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[1] Google Location API</strong>
+              <p class="text-stone-600">Pemeriksaan batas radius koordinat GPS secara akurat sebelum tombol konfirmasi kehadiran dapat ditekan.</p>
+            </div>
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[2] Speech-to-Text Native</strong>
+              <p class="text-stone-600">Fitur input catatan agenda atau alasan keterlambatan menggunakan rekaman suara langsung tanpa mengetik panjang.</p>
+            </div>
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[3] Offline-First SQLite</strong>
+              <p class="text-stone-600">Riwayat presensi tersimpan aman di database lokal gawai saat sinyal internet minim, lalu tersinkronisasi saat terhubung kembali.</p>
+            </div>
+          </div>
         </div>
 
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex items-center justify-between gap-3 shrink-0">
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
         <span class="text-xs font-mono text-stone-500">// Native Java Android Development</span>
-        <button onclick="closeModal('modal-attendance')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+        <button onclick="closeModal('modal-attendance')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2845,55 +3019,83 @@
     </div>
   </div>
 
-  <!-- MODAL 10: RX Queue System -->
-  <div id="modal-queue" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 10: RX Queue System (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-queue" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[0.9deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// APLIKASI DESKTOP JAVA · 2023</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Sistem Antrean Resep Obat Apotek Berbasis FIFO</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Aplikasi Desktop Java Swing GUI · NetBeans IDE & MySQL JDBC</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// APLIKASI DESKTOP JAVA · 2023</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Sistem Antrean Resep Obat Apotek Berbasis FIFO
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Aplikasi Desktop Java Swing GUI · NetBeans IDE &amp; MySQL JDBC
+          </p>
         </div>
-        <button onclick="closeModal('modal-queue')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-queue')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-5 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
-        <!-- Mounted Frame -->
-        <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-          <div class="w-full h-52 sm:h-60 rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80">
+        <!-- Mounted Frame with Corner Tape -->
+        <div class="relative bg-white p-3 sm:p-4 border border-stone-300 shadow-sm">
+          <div class="absolute -top-2 -left-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+          <div class="absolute -top-2 -right-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+
+          <div class="w-full h-52 sm:h-60 bg-stone-100 border border-stone-200 overflow-hidden">
             <img src="assets/images/ss_rxqueue.png" alt="Sistem Antrean Resep Apotek FIFO" class="w-full h-full object-cover object-top" />
           </div>
-          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Antarmuka Pemanggilan Antrean, Loket Resep & Durasi Layanan</div>
+          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Antarmuka Pemanggilan Antrean, Loket Resep &amp; Durasi Layanan</div>
         </div>
 
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-2">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// MANAJEMEN PENUMPUKAN RESEP OBAT</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+        <!-- Problem Context Note (Paper Slip with Tape) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.2deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ MANAJEMEN PENUMPUKAN RESEP OBAT ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
             Mengurai kemacetan antrean saat jam sibuk di apotek dengan mendisiplinkan alur peracikan obat berdasarkan waktu kedatangan (FIFO - First-In First-Out) dan memisahkan nomor antrean untuk resep siap saji dengan racikan puyer/kapsul.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-white border border-stone-300/80 shadow-2xs space-y-2">
-          <div class="font-mono text-xs font-bold uppercase text-stone-900">// ALUR KERJA & TEKNOLOGI</div>
-          <ul class="list-disc pl-4 space-y-1.5 text-stone-700 text-xs sm:text-sm marker:text-stone-400">
-            <li>Antarmuka panggilan loket interaktif dengan indikator visual status pengerjaan resep di farmasi.</li>
-            <li>Koneksi JDBC MySQL untuk mencatat histori waktu tunggu rata-rata pasien setiap harinya.</li>
-            <li>Ringkasan performa harian untuk mengevaluasi kecepatan pelayanan peracikan obat oleh staf apoteker.</li>
-          </ul>
+        <!-- Workflow & Tech Sheet -->
+        <div class="relative bg-[#f5ede0] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2.5">
+          <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-32 h-4.5 bg-[#e8dcbf]/85 border-x border-stone-300/60 rotate-[0.5deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs font-bold uppercase text-stone-900 pb-2 border-b border-stone-300/80">// ALUR KERJA &amp; TEKNOLOGI</div>
+          <div class="space-y-2 text-stone-700 text-xs sm:text-sm font-sans">
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[1] Pemanggilan Loket Interaktif</strong>
+              <p class="text-stone-600">Antarmuka panggilan loket interaktif dengan indikator visual status pengerjaan resep di farmasi.</p>
+            </div>
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[2] Pencatatan Waktu Tunggu</strong>
+              <p class="text-stone-600">Koneksi JDBC MySQL untuk mencatat histori waktu tunggu rata-rata pasien setiap harinya.</p>
+            </div>
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[3] Evaluasi Performa Staf</strong>
+              <p class="text-stone-600">Ringkasan performa harian untuk mengevaluasi kecepatan pelayanan peracikan obat oleh staf apoteker.</p>
+            </div>
+          </div>
         </div>
 
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex items-center justify-between gap-3 shrink-0">
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
         <span class="text-xs font-mono text-stone-500">// Desktop Java Swing GUI Application</span>
-        <button onclick="closeModal('modal-queue')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+        <button onclick="closeModal('modal-queue')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2901,55 +3103,83 @@
     </div>
   </div>
 
-  <!-- MODAL 11: Enterprise Java Payroll -->
-  <div id="modal-payroll" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 11: Enterprise Java Payroll (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-payroll" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-2xl lg:max-w-3xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[-0.8deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// ENTERPRISE JAVA & MODUL MOBILE · 2023</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Sistem Penggajian Karyawan Java EE & Modul Mobile</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Arsitektur Multi-Tier Java Server Pages, Servlets & Android Companion</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// ENTERPRISE JAVA &amp; MODUL MOBILE · 2023</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Sistem Penggajian Karyawan Java EE &amp; Modul Mobile
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Arsitektur Multi-Tier Java Server Pages, Servlets &amp; Android Companion
+          </p>
         </div>
-        <button onclick="closeModal('modal-payroll')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-payroll')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-5 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
-        <!-- Mounted Frame -->
-        <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-          <div class="w-full h-52 sm:h-60 rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80">
+        <!-- Mounted Frame with Corner Tape -->
+        <div class="relative bg-white p-3 sm:p-4 border border-stone-300 shadow-sm">
+          <div class="absolute -top-2 -left-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+          <div class="absolute -top-2 -right-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+
+          <div class="w-full h-52 sm:h-60 bg-stone-100 border border-stone-200 overflow-hidden">
             <img src="assets/images/ss_payroll.png" alt="Sistem Penggajian Enterprise Java EE" class="w-full h-full object-cover object-top" />
           </div>
-          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Dashboard Penggajian Java EE & Kompilasi Laporan Slip Gaji</div>
+          <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Dashboard Penggajian Java EE &amp; Kompilasi Laporan Slip Gaji</div>
         </div>
 
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-2">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// ARSITEKTUR MULTI-TIER ENTERPRISE</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
-            Menggabungkan sistem web back-office Java EE (JSP & HTTP Servlets) untuk penghitungan tunjangan, jam lembur, potongan asuransi, serta modul mobile Android untuk verifikasi kartu identitas pegawai melalui kamera perangkat.
+        <!-- Problem Context Note (Paper Slip with Tape) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.2deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ ARSITEKTUR MULTI-TIER ENTERPRISE ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
+            Menggabungkan sistem web back-office Java EE (JSP &amp; HTTP Servlets) untuk penghitungan tunjangan, jam lembur, potongan asuransi, serta modul mobile Android untuk verifikasi kartu identitas pegawai melalui kamera perangkat.
           </p>
         </div>
 
-        <div class="p-4 rounded-xl bg-white border border-stone-300/80 shadow-2xs space-y-2">
-          <div class="font-mono text-xs font-bold uppercase text-stone-900">// SPESIFIKASI MODUL & DOKUMEN</div>
-          <ul class="list-disc pl-4 space-y-1.5 text-stone-700 text-xs sm:text-sm marker:text-stone-400">
-            <li>Pola MVC terpisah (JavaServer Pages untuk antarmuka, HTTP Servlets untuk logika bisnis kalkulasi gaji).</li>
-            <li>Kompilasi otomatis slip gaji siap cetak berformat PDF menggunakan library JasperReports.</li>
-            <li>Penyimpanan histori gaji bulanan dan rincian lembur dalam skema database relasional MySQL.</li>
-          </ul>
+        <!-- Module & Spec Sheet -->
+        <div class="relative bg-[#f5ede0] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2.5">
+          <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-32 h-4.5 bg-[#e8dcbf]/85 border-x border-stone-300/60 rotate-[0.5deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs font-bold uppercase text-stone-900 pb-2 border-b border-stone-300/80">// SPESIFIKASI MODUL &amp; DOKUMEN</div>
+          <div class="space-y-2 text-stone-700 text-xs sm:text-sm font-sans">
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[1] Pola MVC Terpisah</strong>
+              <p class="text-stone-600">JavaServer Pages untuk antarmuka, HTTP Servlets untuk logika bisnis kalkulasi gaji.</p>
+            </div>
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[2] Otomasi PDF JasperReports</strong>
+              <p class="text-stone-600">Kompilasi otomatis slip gaji siap cetak berformat PDF menggunakan library JasperReports.</p>
+            </div>
+            <div class="p-2.5 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono text-xs mb-0.5">[3] Relational Schema Storage</strong>
+              <p class="text-stone-600">Penyimpanan histori gaji bulanan dan rincian lembur dalam skema database relasional MySQL.</p>
+            </div>
+          </div>
         </div>
 
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex items-center justify-between gap-3 shrink-0">
-        <span class="text-xs font-mono text-stone-500">// Solusi Terintegrasi Java EE & Android Mobile</span>
-        <button onclick="closeModal('modal-payroll')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
+        <span class="text-xs font-mono text-stone-500">// Solusi Terintegrasi Java EE &amp; Android Mobile</span>
+        <button onclick="closeModal('modal-payroll')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2957,7 +3187,7 @@
     </div>
   </div>
 
-
+  
   <!-- ==================== SCRIPTS & ANIMATIONS LOGIC ==================== -->
   <script>
     lucide.createIcons();
