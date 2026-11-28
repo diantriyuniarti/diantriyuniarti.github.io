@@ -2148,98 +2148,130 @@
 
   <!-- ==================== MODALS ==================== -->
 
-  <!-- MODAL 1: AnxietyCheck -->
-  <div id="modal-anxiety" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-3xl lg:max-w-4xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 1: AnxietyCheck (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-anxiety" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-3xl lg:max-w-4xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[-0.8deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// SKRIPSI · PUBLIKASI JURNAL NASIONAL (SINTA) · 2026</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">AnxietyCheck: Sistem Skrining Gangguan Kecemasan (SVM & GAD-7)</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Penelitian Skripsi Sarjana Komputer · Universitas Pamulang · SINTA Terakreditasi</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-rose-600 shrink-0"></span>
+            <span class="truncate">// ARSIP SKRIPSI S1 · TEKNIK INFORMATIKA</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            AnxietyCheck: Sistem Skrining Gangguan Kecemasan (SVM &amp; GAD-7)
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Penelitian Skripsi Sarjana Komputer · Universitas Pamulang · Berbasis Web
+          </p>
         </div>
-        <button onclick="closeModal('modal-anxiety')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-anxiety')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
-        <!-- Mounted Photo Gallery -->
-        <div>
-          <div class="text-[11px] font-mono uppercase tracking-wider text-stone-500 mb-2 font-semibold">// DOKUMENTASI SISTEM & TANGKAPAN LAYAR</div>
-          <div class="rounded-xl border border-stone-300/90 bg-white p-2 sm:p-2.5 shadow-sm">
-            <div class="w-full h-64 sm:h-84 md:h-96 rounded-lg overflow-hidden bg-stone-100 flex items-center justify-center border border-stone-200/80">
-              <img id="anxietyGalleryMain" src="assets/images/ss_anxiety.png" alt="Pratinjau Sistem AnxietyCheck" class="w-full h-full object-contain transition-all duration-200" />
-            </div>
-            <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">Klik thumbnail di bawah untuk melihat modul antarmuka lainnya</div>
+        <!-- Mounted Photo (Polaroid / Archival Photo Mount with Corner Tape) -->
+        <div class="relative bg-white p-3 sm:p-4 border border-stone-300 shadow-sm">
+          <!-- Corner tape tabs -->
+          <div class="absolute -top-2 -left-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+          <div class="absolute -top-2 -right-2 w-10 sm:w-12 h-3.5 sm:h-4 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+
+          <div class="w-full h-64 sm:h-80 md:h-96 bg-stone-100 flex items-center justify-center border border-stone-200 overflow-hidden">
+            <img id="anxietyGalleryMain" src="assets/images/ss_anxiety.png" alt="Pratinjau Sistem AnxietyCheck" class="w-full h-full object-contain transition-all duration-200" />
           </div>
-          <div class="grid grid-cols-3 sm:grid-cols-6 gap-2 mt-3">
-            <button onclick="changeAnxietyImage('assets/images/ss_anxiety.png')" class="rounded-lg overflow-hidden border-2 border-stone-900 h-12 bg-white focus:outline-none hover:opacity-85 transition p-0.5 shadow-xs">
-              <img src="assets/images/ss_anxiety.png" class="w-full h-full object-cover rounded" alt="Thumbnail Beranda" />
+          <div class="mt-2.5 flex items-center justify-between text-[11px] font-mono text-stone-500 px-1">
+            <span>// DOKUMENTASI ANTARMUKA SISTEM</span>
+            <span class="hidden sm:inline">Pilih modul antarmuka:</span>
+          </div>
+
+          <!-- Thumbnails -->
+          <div class="grid grid-cols-6 gap-1.5 sm:gap-2 mt-2 pt-2 border-t border-stone-200">
+            <button onclick="changeAnxietyImage('assets/images/ss_anxiety.png')" class="border-2 border-stone-900 h-10 sm:h-12 bg-white p-0.5 cursor-pointer">
+              <img src="assets/images/ss_anxiety.png" class="w-full h-full object-cover" alt="Beranda" />
             </button>
-            <button onclick="changeAnxietyImage('assets/images/anxiety_dashboard_user.png')" class="rounded-lg overflow-hidden border border-stone-300 hover:border-stone-800 h-12 bg-white focus:outline-none transition p-0.5 shadow-xs">
-              <img src="assets/images/anxiety_dashboard_user.png" class="w-full h-full object-cover rounded" alt="Thumbnail Dashboard User" />
+            <button onclick="changeAnxietyImage('assets/images/anxiety_dashboard_user.png')" class="border border-stone-300 hover:border-stone-800 h-10 sm:h-12 bg-white p-0.5 cursor-pointer">
+              <img src="assets/images/anxiety_dashboard_user.png" class="w-full h-full object-cover" alt="Dashboard User" />
             </button>
-            <button onclick="changeAnxietyImage('assets/images/anxiety_test.png')" class="rounded-lg overflow-hidden border border-stone-300 hover:border-stone-800 h-12 bg-white focus:outline-none transition p-0.5 shadow-xs">
-              <img src="assets/images/anxiety_test.png" class="w-full h-full object-cover rounded" alt="Thumbnail Tes GAD-7" />
+            <button onclick="changeAnxietyImage('assets/images/anxiety_test.png')" class="border border-stone-300 hover:border-stone-800 h-10 sm:h-12 bg-white p-0.5 cursor-pointer">
+              <img src="assets/images/anxiety_test.png" class="w-full h-full object-cover" alt="Tes GAD-7" />
             </button>
-            <button onclick="changeAnxietyImage('assets/images/anxiety_hasil.png')" class="rounded-lg overflow-hidden border border-stone-300 hover:border-stone-800 h-12 bg-white focus:outline-none transition p-0.5 shadow-xs">
-              <img src="assets/images/anxiety_hasil.png" class="w-full h-full object-cover rounded" alt="Thumbnail Hasil Diagnosis" />
+            <button onclick="changeAnxietyImage('assets/images/anxiety_hasil.png')" class="border border-stone-300 hover:border-stone-800 h-10 sm:h-12 bg-white p-0.5 cursor-pointer">
+              <img src="assets/images/anxiety_hasil.png" class="w-full h-full object-cover" alt="Hasil Diagnosis" />
             </button>
-            <button onclick="changeAnxietyImage('assets/images/anxiety_dashboard_admin.png')" class="rounded-lg overflow-hidden border border-stone-300 hover:border-stone-800 h-12 bg-white focus:outline-none transition p-0.5 shadow-xs">
-              <img src="assets/images/anxiety_dashboard_admin.png" class="w-full h-full object-cover rounded" alt="Thumbnail Dashboard Admin" />
+            <button onclick="changeAnxietyImage('assets/images/anxiety_dashboard_admin.png')" class="border border-stone-300 hover:border-stone-800 h-10 sm:h-12 bg-white p-0.5 cursor-pointer">
+              <img src="assets/images/anxiety_dashboard_admin.png" class="w-full h-full object-cover" alt="Dashboard Admin" />
             </button>
-            <button onclick="changeAnxietyImage('assets/images/anxiety_model_svm.png')" class="rounded-lg overflow-hidden border border-stone-300 hover:border-stone-800 h-12 bg-white focus:outline-none transition p-0.5 shadow-xs">
-              <img src="assets/images/anxiety_model_svm.png" class="w-full h-full object-cover rounded" alt="Thumbnail Visualisasi SVM" />
+            <button onclick="changeAnxietyImage('assets/images/anxiety_model_svm.png')" class="border border-stone-300 hover:border-stone-800 h-10 sm:h-12 bg-white p-0.5 cursor-pointer">
+              <img src="assets/images/anxiety_model_svm.png" class="w-full h-full object-cover" alt="Visualisasi SVM" />
             </button>
           </div>
         </div>
 
-        <!-- Problem & Solution Overview -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80">
-            <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 mb-2 flex items-center gap-1.5">
-              <i data-lucide="target" class="w-4 h-4 text-stone-700"></i>
-              <span>Latar Belakang Masalah</span>
+        <!-- Two Paper Notes (Tempelan Catatan Riset) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
+          
+          <!-- Note 1: Latar Belakang (Paper Slip with Tape) -->
+          <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs">
+            <div class="absolute -top-2.5 left-8 w-20 sm:w-24 h-4 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.5deg] shadow-2xs pointer-events-none"></div>
+            
+            <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 mb-2.5 border-b border-stone-300/70">
+              [ LATAR BELAKANG MASALAH ]
             </div>
-            <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+            <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
               Tingkat stres dan kecemasan pada kalangan mahasiswa sering kali tidak terdeteksi sejak awal karena keterbatasan akses ke tenaga psikolog serta keengganan memeriksakan diri akibat stigma sosial. Diperlukan instrumen skrining mandiri berbasis web yang terstandar medis, cepat, dan mudah diakses dari perangkat manapun.
             </p>
           </div>
 
-          <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80">
-            <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 mb-2 flex items-center gap-1.5">
-              <i data-lucide="cpu" class="w-4 h-4 text-stone-700"></i>
-              <span>Arsitektur & Klasifikasi SVM</span>
+          <!-- Note 2: Metodologi & SVM (Paper Slip with Tape) -->
+          <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs">
+            <div class="absolute -top-2.5 right-8 w-20 sm:w-24 h-4 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[1.5deg] shadow-2xs pointer-events-none"></div>
+            
+            <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 mb-2.5 border-b border-stone-300/70">
+              [ ARSITEKTUR &amp; KLASIFIKASI SVM ]
             </div>
-            <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+            <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
               Sistem web full-stack mengadopsi kuesioner baku GAD-7 (Generalized Anxiety Disorder 7-item). Model Support Vector Machine (Linear Kernel, C=1.0) memprediksi tingkat kecemasan responden ke dalam kategori akurat, dilengkapi fitur unduh berkas resume diagnosis PDF untuk rujukan psikologis dan panel admin monitoring performa model.
             </p>
           </div>
+
         </div>
 
-        <!-- Research Metrics Table -->
-        <div class="p-4 sm:p-5 rounded-xl bg-[#ede5d6] border border-stone-300/90 text-stone-900">
-          <div class="font-mono text-xs font-bold uppercase tracking-wider text-stone-800 mb-3">// METRIK EVALUASI MODEL & DATASET RISET</div>
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-center">
-            <div class="bg-white p-3 rounded-lg border border-stone-300/80 shadow-2xs">
-              <span class="text-[10px] sm:text-[11px] text-stone-500 block font-mono uppercase">Dataset Sampel</span>
-              <span class="font-bold text-sm sm:text-base text-stone-900 mt-0.5 block">554 Responden</span>
+        <!-- Taped Evaluation Sheet (Lembar Tempelan Pengujian Hasil) -->
+        <div class="relative bg-[#f5ede0] p-4 sm:p-6 border border-stone-300 shadow-xs">
+          <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-28 sm:w-32 h-4.5 bg-[#e8dcbf]/85 border-x border-stone-300/60 rotate-[0.5deg] shadow-2xs pointer-events-none"></div>
+
+          <div class="flex items-center justify-between pb-2 mb-3 border-b border-stone-300/80">
+            <span class="font-mono text-xs font-bold uppercase tracking-wider text-stone-900">
+              // HASIL PENGUJIAN &amp; METRIK RISET
+            </span>
+            <span class="text-[10px] font-mono text-stone-600 bg-stone-200/80 px-2 py-0.5 border border-stone-300">
+              5-FOLD CV
+            </span>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5 sm:gap-3 text-left font-mono">
+            <div class="p-2.5 sm:p-3 bg-white/90 border border-stone-300/80">
+              <span class="text-[10px] text-stone-500 uppercase block">DATASET SAMPEL</span>
+              <span class="text-xs sm:text-base font-bold text-stone-950 mt-1 block">554 Responden</span>
             </div>
-            <div class="bg-white p-3 rounded-lg border border-stone-300/80 shadow-2xs">
-              <span class="text-[10px] sm:text-[11px] text-stone-500 block font-mono uppercase">Split Data</span>
-              <span class="font-bold text-sm sm:text-base text-stone-900 mt-0.5 block">80% : 20%</span>
+            <div class="p-2.5 sm:p-3 bg-white/90 border border-stone-300/80">
+              <span class="text-[10px] text-stone-500 uppercase block">SPLIT DATA</span>
+              <span class="text-xs sm:text-base font-bold text-stone-950 mt-1 block">80% : 20%</span>
             </div>
-            <div class="bg-white p-3 rounded-lg border border-stone-300/80 shadow-2xs">
-              <span class="text-[10px] sm:text-[11px] text-stone-500 block font-mono uppercase">Macro F1-Score</span>
-              <span class="font-bold text-sm sm:text-base text-stone-900 mt-0.5 block">99,19%</span>
+            <div class="p-2.5 sm:p-3 bg-white/90 border border-stone-300/80">
+              <span class="text-[10px] text-stone-500 uppercase block">MACRO F1-SCORE</span>
+              <span class="text-xs sm:text-base font-bold text-rose-700 mt-1 block">99,19%</span>
             </div>
-            <div class="bg-white p-3 rounded-lg border border-stone-300/80 shadow-2xs">
-              <span class="text-[10px] sm:text-[11px] text-stone-500 block font-mono uppercase">Skala Klinis</span>
-              <span class="font-bold text-sm sm:text-base text-stone-900 mt-0.5 block">GAD-7 Standar</span>
+            <div class="p-2.5 sm:p-3 bg-white/90 border border-stone-300/80">
+              <span class="text-[10px] text-stone-500 uppercase block">INSTRUMEN MEDIS</span>
+              <span class="text-xs sm:text-base font-bold text-stone-950 mt-1 block">GAD-7 Standar</span>
             </div>
           </div>
         </div>
@@ -2247,12 +2279,11 @@
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex flex-wrap items-center justify-between gap-3 shrink-0">
-        <a href="https://github.com/diantriyuniarti/anxietycheck-svm-gad7" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-stone-900 text-stone-50 hover:bg-black transition shadow-sm">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span>Lihat Kode Sumber di GitHub</span>
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
+        <a href="https://github.com/diantriyuniarti/anxietycheck-svm-gad7" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-900 text-stone-50 hover:bg-black transition border border-stone-900">
+          <span>Lihat Source Code ↗</span>
         </a>
-        <button onclick="closeModal('modal-anxiety')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+        <button onclick="closeModal('modal-anxiety')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
@@ -2260,68 +2291,87 @@
     </div>
   </div>
 
-  <!-- MODAL 2: Kopiluvium -->
-  <div id="modal-kopiluvium" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/75 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-5 md:p-6 overflow-y-auto">
-    <div class="relative bg-[#faf7f0] text-stone-900 max-w-3xl lg:max-w-4xl w-full rounded-2xl border border-stone-300 shadow-2xl overflow-hidden my-6 sm:my-8 max-h-[90vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
+  <!-- MODAL 2: Kopiluvium (Paper Dossier with Tape / Tempelan Kertas) -->
+  <div id="modal-kopiluvium" class="modal-backdrop fixed inset-0 z-50 bg-stone-950/80 backdrop-blur-sm hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div class="relative bg-[#faf7f0] text-stone-900 max-w-3xl lg:max-w-4xl w-full border border-stone-300 shadow-2xl my-6 max-h-[92vh] sm:max-h-[88vh] flex flex-col font-sans transition-all duration-200">
       
+      <!-- Top Masking Tape Strip (Tempelan Lakban Kertas) -->
+      <div class="absolute -top-3 left-1/2 -translate-x-1/2 w-32 sm:w-40 h-5 sm:h-6 bg-[#ede3cc]/90 border-y border-stone-400/40 rotate-[0.8deg] shadow-2xs pointer-events-none z-20"></div>
+
       <!-- Dossier Header -->
-      <div class="px-5 sm:px-7 py-4 sm:py-5 border-b border-stone-300/90 bg-[#f3ede2] flex items-start sm:items-center justify-between gap-4 shrink-0">
-        <div>
-          <span class="text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-widest font-semibold block">// KERJA PRAKTEK · PUBLIKASI JURNAL OKTAL · 2025</span>
-          <h3 class="text-lg sm:text-xl font-bold text-stone-900 tracking-tight font-sans mt-0.5">Sistem Informasi Inventaris & Stok Opname Gudang · Kopiluvium</h3>
-          <p class="text-xs text-stone-600 font-sans mt-0.5">Studi Lapangan Kerja Praktek (KP) & Artikel Ilmiah Terpublikasi</p>
+      <div class="px-5 sm:px-8 pt-5 sm:pt-6 pb-4 border-b border-stone-300/80 bg-[#f4eee3] flex items-start justify-between gap-3 shrink-0 relative">
+        <div class="min-w-0 flex-1">
+          <div class="flex items-center gap-1.5 mb-1 text-[10px] sm:text-[11px] font-mono uppercase tracking-widest text-stone-600 font-bold">
+            <span class="inline-block w-1.5 h-1.5 rounded-full bg-stone-700 shrink-0"></span>
+            <span class="truncate">// ARSIP KERJA PRAKTEK &amp; JURNAL OKTAL · 2025</span>
+          </div>
+          <h3 class="text-lg sm:text-2xl font-bold font-serif-academic text-stone-950 tracking-tight leading-snug">
+            Sistem Informasi Inventaris &amp; Stok Opname Gudang · Kopiluvium
+          </h3>
+          <p class="text-[11px] sm:text-xs text-stone-600 font-mono mt-1">
+            Studi Lapangan Kerja Praktek (KP) &amp; Publikasi Artikel Ilmiah Terpublikasi
+          </p>
         </div>
-        <button onclick="closeModal('modal-kopiluvium')" class="p-1.5 sm:p-2 rounded-xl text-stone-500 hover:text-stone-950 hover:bg-stone-300/60 transition cursor-pointer shrink-0">
-          <i data-lucide="x" class="w-5 h-5"></i>
+        <button onclick="closeModal('modal-kopiluvium')" class="p-1.5 sm:p-2 text-stone-600 hover:text-stone-950 hover:bg-stone-300/60 border border-stone-300 transition cursor-pointer shrink-0" title="Tutup">
+          <svg class="w-4 h-4 sm:w-5 sm:h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
         </button>
       </div>
 
       <!-- Dossier Body -->
-      <div class="p-5 sm:p-7 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
+      <div class="p-5 sm:p-8 overflow-y-auto space-y-6 text-xs sm:text-sm text-stone-800 leading-relaxed bg-[#faf7f0]">
         
-        <!-- Mounted Photos (Dashboard & Handover) -->
+        <!-- Mounted Photos (Dashboard & Handover with Corner Tape) -->
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-            <div class="w-full h-52 sm:h-60 rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80">
+          <div class="relative bg-white p-3 border border-stone-300 shadow-sm">
+            <div class="absolute -top-2 -left-2 w-10 h-3.5 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[-25deg] shadow-2xs pointer-events-none z-10"></div>
+            <div class="w-full h-52 sm:h-60 bg-stone-100 border border-stone-200 overflow-hidden">
               <img src="assets/images/ss_kopiluvium.png" alt="Tampilan Antarmuka Stok Opname Kopiluvium" class="w-full h-full object-cover object-top" />
             </div>
-            <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Dashboard Sistem & Rekap Bahan Baku</div>
+            <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Dashboard Sistem &amp; Rekap Bahan Baku</div>
           </div>
-          <div class="rounded-xl border border-stone-300/90 bg-white p-2.5 shadow-sm">
-            <div class="w-full h-52 sm:h-60 rounded-lg overflow-hidden bg-stone-100 border border-stone-200/80">
+          <div class="relative bg-white p-3 border border-stone-300 shadow-sm">
+            <div class="absolute -top-2 -right-2 w-10 h-3.5 bg-[#ede3cc]/85 border border-stone-300/60 rotate-[25deg] shadow-2xs pointer-events-none z-10"></div>
+            <div class="w-full h-52 sm:h-60 bg-stone-100 border border-stone-200 overflow-hidden">
               <img src="assets/images/kopiluvium_presentation.jpg" alt="Presentasi Serah Terima Sistem Kopiluvium" class="w-full h-full object-cover object-center" />
             </div>
-            <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Presentasi & Serah Terima ke Mentor Lapangan</div>
+            <div class="text-[11px] font-mono text-stone-500 mt-2 text-center">// Presentasi &amp; Serah Terima ke Mentor Lapangan</div>
           </div>
         </div>
 
-        <!-- Problem Context -->
-        <div class="p-4 sm:p-5 rounded-xl bg-[#f4eee3] border border-stone-300/80 space-y-2">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// KONTEKS LAPANGAN & PERMASALAHAN OPERASIONAL</div>
-          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm">
+        <!-- Problem Context Note (Paper Slip with Tape) -->
+        <div class="relative bg-[#fcf9ee] p-4 sm:p-5 border border-stone-300 shadow-xs space-y-2">
+          <div class="absolute -top-2.5 left-8 w-24 h-4.5 bg-[#ede4ce]/80 border-x border-stone-300/60 rotate-[-1.2deg] shadow-2xs pointer-events-none"></div>
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 border-b border-stone-300/70">
+            [ KONTEKS LAPANGAN &amp; PERMASALAHAN OPERASIONAL ]
+          </div>
+          <p class="text-stone-700 leading-relaxed text-xs sm:text-sm font-sans">
             Sebelum sistem ini diterapkan di kedai Kopiluvium, pendataan persediaan biji kopi, susu, sirup, dan kemasan harian masih dicatat pada nota kertas dan rekapan lembar kerja manual. Hal tersebut kerap memicu selisih antara stok tercatat dengan stok fisik di gudang, menyulitkan penghitungan laba kotor, serta membuat pesanan ulang ke supplier terlambat.
           </p>
         </div>
 
-        <!-- Technical Implementation Notes -->
-        <div class="space-y-3">
-          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900">// CATATAN IMPLEMENTASI TEKNIS</div>
+        <!-- Technical Implementation Notes (Clean Paper Slips) -->
+        <div class="relative bg-[#f5ede0] p-4 sm:p-6 border border-stone-300 shadow-xs">
+          <div class="absolute -top-2.5 left-1/2 -translate-x-1/2 w-32 h-4.5 bg-[#e8dcbf]/85 border-x border-stone-300/60 rotate-[0.5deg] shadow-2xs pointer-events-none"></div>
+
+          <div class="font-mono text-xs uppercase tracking-wider font-bold text-stone-900 pb-2 mb-3 border-b border-stone-300/80">
+            // CATATAN IMPLEMENTASI TEKNIS &amp; METODE WATERFALL
+          </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm">
-            <div class="p-3.5 bg-white rounded-lg border border-stone-300/80 shadow-2xs">
-              <strong class="text-stone-900 block mb-1">Validasi Masuk & Keluar Stok</strong>
-              <p class="text-stone-600">Pencatatan langsung setiap kali bahan baku diterima dari supplier atau dipindahkan ke bar operasional, dilengkapi stempel waktu petugas penerima.</p>
+            <div class="p-3 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono font-bold mb-1">[1] Validasi Masuk &amp; Keluar Stok</strong>
+              <p class="text-stone-600 font-sans">Pencatatan langsung setiap kali bahan baku diterima dari supplier atau dipindahkan ke bar operasional, dilengkapi stempel waktu petugas penerima.</p>
             </div>
-            <div class="p-3.5 bg-white rounded-lg border border-stone-300/80 shadow-2xs">
-              <strong class="text-stone-900 block mb-1">Audit Selisih Stok Opname</strong>
-              <p class="text-stone-600">Formulir pemeriksaan berkala yang otomatis membandingkan hitungan fisik gudang terhadap sisa saldo sistem, mendeteksi selisih secara instan.</p>
+            <div class="p-3 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono font-bold mb-1">[2] Audit Selisih Stok Opname</strong>
+              <p class="text-stone-600 font-sans">Formulir pemeriksaan berkala yang otomatis membandingkan hitungan fisik gudang terhadap sisa saldo sistem, mendeteksi selisih secara instan.</p>
             </div>
-            <div class="p-3.5 bg-white rounded-lg border border-stone-300/80 shadow-2xs">
-              <strong class="text-stone-900 block mb-1">Hierarki Pengguna Terisolasi</strong>
-              <p class="text-stone-600">Pemisahan hak akses antara Administrator (pengaturan harga master dan laporan laba) dengan Staf Bar (pencatatan barang habis harian).</p>
+            <div class="p-3 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono font-bold mb-1">[3] Hierarki Pengguna Terisolasi</strong>
+              <p class="text-stone-600 font-sans">Pemisahan hak akses antara Administrator (pengaturan harga master dan laporan laba) dengan Staf Bar (pencatatan barang habis harian).</p>
             </div>
-            <div class="p-3.5 bg-white rounded-lg border border-stone-300/80 shadow-2xs">
-              <strong class="text-stone-900 block mb-1">Publikasi Riset Terbuka</strong>
-              <p class="text-stone-600">Hasil uji fungsionalitas dan metode Waterfall perancangan sistem ini dipublikasikan pada Jurnal Pengabdian dan Penelitian Mahasiswa (Jurnal OKTAL, 2025).</p>
+            <div class="p-3 bg-white/90 border border-stone-300/80">
+              <strong class="text-stone-900 block font-mono font-bold mb-1">[4] Publikasi Riset Terbuka</strong>
+              <p class="text-stone-600 font-sans">Hasil uji fungsionalitas dan metode Waterfall perancangan sistem ini dipublikasikan pada Jurnal Pengabdian dan Penelitian Mahasiswa (Jurnal OKTAL, 2025).</p>
             </div>
           </div>
         </div>
@@ -2329,12 +2379,11 @@
       </div>
 
       <!-- Dossier Footer -->
-      <div class="px-5 sm:px-7 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f3ede2] flex flex-wrap items-center justify-between gap-3 shrink-0">
-        <a href="https://github.com/diantriyuniarti/kopi-luvium-stock-keeper" target="_blank" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-semibold bg-stone-900 text-stone-50 hover:bg-black transition shadow-sm">
-          <i data-lucide="github" class="w-4 h-4"></i>
-          <span>Lihat Kode Sumber di GitHub</span>
+      <div class="px-5 sm:px-8 py-3.5 sm:py-4 border-t border-stone-300/90 bg-[#f4eee3] flex items-center justify-between gap-3 shrink-0">
+        <a href="https://github.com/diantriyuniarti/kopi-luvium-stock-keeper" target="_blank" class="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-900 text-stone-50 hover:bg-black transition border border-stone-900">
+          <span>Lihat Source Code ↗</span>
         </a>
-        <button onclick="closeModal('modal-kopiluvium')" class="px-4 py-2 rounded-xl text-xs font-medium bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 transition cursor-pointer">
+        <button onclick="closeModal('modal-kopiluvium')" class="px-4 py-2 text-xs font-mono font-bold uppercase tracking-wider bg-stone-200 hover:bg-stone-300 text-stone-900 border border-stone-400 transition cursor-pointer">
           Tutup
         </button>
       </div>
