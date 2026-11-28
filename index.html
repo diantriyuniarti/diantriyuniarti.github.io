@@ -92,14 +92,12 @@
 
     /* Scroll reveal animations */
     .reveal {
-      opacity: 0;
-      transform: translateY(28px);
-      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
-      will-change: opacity, transform;
+      opacity: 1;
+      transform: none;
     }
     .reveal.active {
       opacity: 1;
-      transform: translateY(0);
+      transform: none;
     }
 
     /* Interactive hover lift cards */
@@ -1291,7 +1289,7 @@
     <div class="max-w-[1536px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
       
       <!-- Section Header (Arya Ziddan Clean Architectural Typography) -->
-      <div class="mb-12 sm:mb-16 reveal">
+      <div class="mb-12 sm:mb-16">
         <!-- Tag -->
         <div class="text-xs sm:text-sm font-mono font-bold tracking-widest text-rose-500 uppercase mb-3 sm:mb-4">
           // 03 · MILESTONES
@@ -1309,165 +1307,112 @@
         </p>
       </div>
 
-      <!-- 4 Milestone Cards Grid (Polos, Flat, Solid Matte, Arya Ziddan Sans) -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 reveal">
+      <!-- 4 Plain Sharp Rectangular Milestone Cards (Polos, Non-AI, High Contrast) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
         
-                <!-- CARD 01: Competition Recognition -->
-        <div class="group rounded-xl bg-[#120a0d] border border-stone-800 p-6 sm:p-7 flex flex-col justify-between transition cursor-default">
+        <!-- CARD 01: Competition Recognition -->
+        <div class="bg-[#161616] border border-neutral-700 p-6 flex flex-col justify-between rounded-none shadow-sm cursor-default">
           <div>
-            <!-- Top Row: Index & Circular Icon Badge -->
             <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs text-slate-500 font-bold">01</span>
-              <div class="w-8 h-8 rounded-full bg-[#1c1015] border border-stone-800 flex items-center justify-center text-slate-400 transition">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
-                </svg>
-              </div>
+              <span class="font-mono text-sm font-bold text-neutral-400">01</span>
+              <span class="text-[10px] font-mono tracking-widest text-neutral-500 uppercase font-semibold">NATIONAL AWARD</span>
             </div>
-
-            <!-- Category -->
-            <div class="text-[10px] font-mono tracking-widest text-rose-400 uppercase font-bold mb-2">
-              COMPETITION RECOGNITION
+            <div class="text-xs font-mono tracking-wider text-rose-500 uppercase font-bold mb-2">
+              // COMPETITION RECOGNITION
             </div>
-
-            <!-- Title: Arya Ziddan Sans Bold -->
-            <h3 class="text-lg sm:text-xl font-bold text-white font-sans uppercase tracking-tight leading-snug transition-colors">
+            <h3 class="text-lg sm:text-xl font-bold text-white font-sans uppercase tracking-tight leading-snug">
               1st Honourable Mention
             </h3>
-
-            <!-- Description -->
-            <p class="text-xs text-slate-400 font-sans mt-2 leading-relaxed">
+            <p class="text-xs sm:text-sm text-neutral-300 font-sans mt-2.5 leading-relaxed">
               National Scientific Poster Competition (Festival Seni dan Pendidikan Ilmiah FSPI UNY 2023).
             </p>
           </div>
-
-          <!-- Bottom Footer -->
-          <div class="border-t border-dashed border-stone-800/80 pt-3.5 mt-5 flex items-center justify-between text-[11px] font-mono text-slate-500">
+          <div class="border-t border-neutral-800 pt-3.5 mt-6 flex items-center justify-between text-xs font-mono text-neutral-400">
             <span>// VERIFIED RECORD</span>
-            <span class="text-slate-500">OFFICIAL</span>
+            <span class="text-neutral-500 font-bold">OFFICIAL</span>
           </div>
         </div>
 
         <!-- CARD 02: Academic Programme -->
         <div onclick="openModal('modal-pmm')"
-             class="group rounded-xl bg-[#120a0d] border border-stone-800 p-6 sm:p-7 flex flex-col justify-between hover:border-rose-900/60 transition cursor-pointer">
+             class="bg-[#161616] border border-neutral-700 p-6 flex flex-col justify-between rounded-none shadow-sm cursor-pointer hover:border-neutral-500 transition-colors">
           <div>
-            <!-- Top Row: Index & Circular Icon Badge -->
             <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs text-slate-500 font-bold">02</span>
-              <div class="w-8 h-8 rounded-full bg-[#1c1015] border border-stone-800 flex items-center justify-center text-slate-400 group-hover:text-rose-300 transition">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"/><line x1="2" x2="22" y1="12" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                </svg>
-              </div>
+              <span class="font-mono text-sm font-bold text-neutral-400">02</span>
+              <span class="text-[10px] font-mono tracking-widest text-neutral-500 uppercase font-semibold">KEMENDIKBUD</span>
             </div>
-
-            <!-- Category -->
-            <div class="text-[10px] font-mono tracking-widest text-rose-400 uppercase font-bold mb-2">
-              ACADEMIC PROGRAMME
+            <div class="text-xs font-mono tracking-wider text-rose-500 uppercase font-bold mb-2">
+              // ACADEMIC PROGRAMME
             </div>
-
-            <!-- Title: Arya Ziddan Sans Bold -->
-            <h3 class="text-lg sm:text-xl font-bold text-white font-sans uppercase tracking-tight leading-snug group-hover:text-rose-300 transition-colors">
+            <h3 class="text-lg sm:text-xl font-bold text-white font-sans uppercase tracking-tight leading-snug">
               Merdeka Student Exchange
             </h3>
-
-            <!-- Description -->
-            <p class="text-xs text-slate-400 font-sans mt-2 leading-relaxed">
+            <p class="text-xs sm:text-sm text-neutral-300 font-sans mt-2.5 leading-relaxed">
               PMM Batch 4 participant at Universitas Sam Ratulangi (UNSRAT), Manado.
             </p>
           </div>
-
-          <!-- Bottom Footer -->
-          <div class="border-t border-dashed border-stone-800/80 pt-3.5 mt-5 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300 transition">
+          <div class="border-t border-neutral-800 pt-3.5 mt-6 flex items-center justify-between text-xs font-mono text-neutral-400">
             <span>// DOCUMENTATION (4 PHOTOS)</span>
-            <span class="text-slate-500 group-hover:text-slate-300 transition">↗</span>
+            <span class="text-rose-400 font-bold">VIEW ↗</span>
           </div>
         </div>
 
         <!-- CARD 03: Professional Certification -->
         <div onclick="openModal('modal-sales')"
-             class="group rounded-xl bg-[#120a0d] border border-stone-800 p-6 sm:p-7 flex flex-col justify-between hover:border-rose-900/60 transition cursor-pointer">
+             class="bg-[#161616] border border-neutral-700 p-6 flex flex-col justify-between rounded-none shadow-sm cursor-pointer hover:border-neutral-500 transition-colors">
           <div>
-            <!-- Top Row: Index & Circular Icon Badge -->
             <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs text-slate-500 font-bold">03</span>
-              <div class="w-8 h-8 rounded-full bg-[#1c1015] border border-stone-800 flex items-center justify-center text-slate-400 group-hover:text-rose-300 transition">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/>
-                </svg>
-              </div>
+              <span class="font-mono text-sm font-bold text-neutral-400">03</span>
+              <span class="text-[10px] font-mono tracking-widest text-neutral-500 uppercase font-semibold">LSP / BNSP</span>
             </div>
-
-            <!-- Category -->
-            <div class="text-[10px] font-mono tracking-widest text-rose-400 uppercase font-bold mb-2">
-              PROFESSIONAL CERTIFICATION
+            <div class="text-xs font-mono tracking-wider text-rose-500 uppercase font-bold mb-2">
+              // PROFESSIONAL CERTIFICATION
             </div>
-
-            <!-- Title: Arya Ziddan Sans Bold -->
-            <h3 class="text-lg sm:text-xl font-bold text-white font-sans uppercase tracking-tight leading-snug group-hover:text-rose-300 transition-colors">
+            <h3 class="text-lg sm:text-xl font-bold text-white font-sans uppercase tracking-tight leading-snug">
               Programmer Competency Certification
             </h3>
-
-            <!-- Description -->
-            <p class="text-xs text-slate-400 font-sans mt-2 leading-relaxed">
+            <p class="text-xs sm:text-sm text-neutral-300 font-sans mt-2.5 leading-relaxed">
               LSP Informatika / Badan Nasional Sertifikasi Profesi (BNSP).
             </p>
           </div>
-
-          <!-- Bottom Footer -->
-          <div class="border-t border-dashed border-stone-800/80 pt-3.5 mt-5 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300 transition">
+          <div class="border-t border-neutral-800 pt-3.5 mt-6 flex items-center justify-between text-xs font-mono text-neutral-400">
             <span>// DOCUMENTATION</span>
-            <span class="text-slate-500 group-hover:text-slate-300 transition">↗</span>
+            <span class="text-rose-400 font-bold">VIEW ↗</span>
           </div>
         </div>
 
         <!-- CARD 04: Research & Publication -->
         <a href="#publikasi"
-           class="group rounded-xl bg-[#120a0d] border border-stone-800 p-6 sm:p-7 flex flex-col justify-between hover:border-rose-900/60 transition">
+           class="bg-[#161616] border border-neutral-700 p-6 flex flex-col justify-between rounded-none shadow-sm hover:border-neutral-500 transition-colors block">
           <div>
-            <!-- Top Row: Index & Circular Icon Badge -->
             <div class="flex items-center justify-between mb-4">
-              <span class="font-mono text-xs text-slate-500 font-bold">04</span>
-              <div class="w-8 h-8 rounded-full bg-[#1c1015] border border-stone-800 flex items-center justify-center text-slate-400 group-hover:text-rose-300 transition">
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z"/><path d="M6 6h10"/><path d="M6 10h10"/>
-                </svg>
-              </div>
+              <span class="font-mono text-sm font-bold text-neutral-400">04</span>
+              <span class="text-[10px] font-mono tracking-widest text-neutral-500 uppercase font-semibold">SINTA INDEXED</span>
             </div>
-
-            <!-- Category -->
-            <div class="text-[10px] font-mono tracking-widest text-rose-400 uppercase font-bold mb-2">
-              RESEARCH & PUBLICATION
+            <div class="text-xs font-mono tracking-wider text-rose-500 uppercase font-bold mb-2">
+              // RESEARCH &amp; PUBLICATION
             </div>
-
-            <!-- Title: Arya Ziddan Sans Bold -->
-            <h3 class="text-lg sm:text-xl font-bold text-white font-sans uppercase tracking-tight leading-snug group-hover:text-rose-300 transition-colors">
+            <h3 class="text-lg sm:text-xl font-bold text-white font-sans uppercase tracking-tight leading-snug">
               National Journal Publication
             </h3>
-
-            <!-- Description -->
-            <p class="text-xs text-slate-400 font-sans mt-2 leading-relaxed">
+            <p class="text-xs sm:text-sm text-neutral-300 font-sans mt-2.5 leading-relaxed">
               Published scientific article in an accredited national journal (SINTA indexed).
             </p>
           </div>
-
-          <!-- Bottom Footer -->
-          <div class="border-t border-dashed border-stone-800/80 pt-3.5 mt-5 flex items-center justify-between text-[11px] font-mono text-slate-500 group-hover:text-slate-300 transition">
-            <span>// PUBLICATIONS</span>
-            <span class="text-slate-500 group-hover:text-slate-300 transition">↗</span>
+          <div class="border-t border-neutral-800 pt-3.5 mt-6 flex items-center justify-between text-xs font-mono text-neutral-400">
+            <span>// 4 PUBLICATIONS</span>
+            <span class="text-rose-400 font-bold">VIEW ↗</span>
           </div>
         </a>
-
       </div>
 
       <!-- Footnote matching reference -->
-      <div class="text-center text-xs text-slate-500 font-mono mt-8 reveal">
+      <div class="text-center text-xs text-neutral-400 font-mono mt-8">
         // Original certificates, event photos, and publication links verified and accessible above.
       </div>
 
       <!-- Formal Education & Experience Timeline -->
-      <div class="mt-16 sm:mt-20 pt-12 sm:pt-16 border-t border-stone-800/80 reveal">
+      <div class="mt-16 sm:mt-20 pt-12 sm:pt-16 border-t border-stone-800/80">
         <div class="mb-10">
           <div class="text-xs sm:text-sm font-mono font-bold tracking-widest text-rose-500 uppercase mb-2">// FORMAL EDUCATION & TIMELINE</div>
           <h3 class="text-2xl sm:text-4xl font-black uppercase tracking-tight font-sans text-white">
