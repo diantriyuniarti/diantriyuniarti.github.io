@@ -205,6 +205,39 @@
         14px 8px 22px -2px rgba(0,0,0,0.6);
     }
 
+        .book-gutter-shadow {
+      background: linear-gradient(to right, 
+        rgba(0,0,0,0.18) 0%, 
+        rgba(0,0,0,0.06) 12%, 
+        transparent 30%, 
+        transparent 70%, 
+        rgba(0,0,0,0.06) 88%, 
+        rgba(0,0,0,0.18) 100%
+      );
+    }
+    .book-left-edge {
+      box-shadow: inset 12px 0 20px -10px rgba(0,0,0,0.1), -2px 0 6px -2px rgba(0,0,0,0.15);
+    }
+    .book-right-edge {
+      box-shadow: inset -12px 0 20px -10px rgba(0,0,0,0.1), 2px 0 6px -2px rgba(0,0,0,0.15);
+    }
+    .book-edge-stacked {
+      background: repeating-linear-gradient(
+        to bottom,
+        #faf7f0,
+        #faf7f0 2.5px,
+        #dcd4c5 2.5px,
+        #dcd4c5 3.5px
+      );
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
     /* Spine crease shadow */
     .spine-crease {
       box-shadow: inset 16px 0 20px -8px rgba(0,0,0,0.18), inset 2px 0 0 rgba(0,0,0,0.08);
@@ -1554,68 +1587,156 @@
         </h2>
       </div>
 
-      <!-- NATURAL PORTRAIT BOOK (Dimension ~460px x 630px matching user reference) -->
-      <div class="relative w-full max-w-[460px] h-[570px] sm:h-[630px] mx-auto book-stage select-none my-2 reveal" id="bookWrapper">
-
-        <!-- BASE SHADOW UNDER BOOK -->
-        <div class="absolute -bottom-4 inset-x-4 h-8 bg-black/80 blur-xl rounded-full pointer-events-none"></div>
-
-        <!-- UNDERNEATH LAYER: The Page being revealed (Next Page) -->
-        <div id="underPage" class="absolute inset-0 rounded-r-xl rounded-l-sm bg-[#fbf8f2] text-stone-900 overflow-hidden stacked-pages-peek spine-crease border-y border-stone-300">
-          <!-- Injected dynamically -->
-        </div>
-
-        <!-- DYNAMIC TURNING SHEET (Follows Cursor on Drag) -->
-        <div id="turningSheet" class="book-sheet rounded-r-xl rounded-l-sm overflow-hidden z-20 cursor-grab active:cursor-grabbing">
+      <!-- ==================== TACTILE PAPER BOOK (COVER & OPEN 2-PAGE SPREAD) ==================== -->
+      <div class="relative w-full mx-auto select-none my-4 reveal" id="bookWrapper">
+        
+        <!-- ==================== VIEW 1: CLOSED BOOK COVER (KAYA KERTAS) ==================== -->
+        <div id="bookCoverView" class="relative max-w-[460px] mx-auto transition-all duration-300">
           
-          <!-- FRONT OF SHEET (Current Page / Cover) -->
-          <div id="turningFront" class="absolute inset-0 bg-[#fbf8f2] text-stone-900 overflow-hidden spine-crease border-y border-stone-300">
-            <!-- Injected dynamically -->
-          </div>
+          <!-- Base Shadow -->
+          <div class="absolute -bottom-4 inset-x-4 h-8 bg-black/80 blur-xl rounded-full pointer-events-none"></div>
 
-          <!-- BACK OF SHEET (Reverse side when flipped past 90 deg) -->
-          <div id="turningBack" class="absolute inset-0 bg-[#f4eee1] text-stone-700 overflow-hidden spine-crease [transform:rotateY(180deg)] [backface-visibility:hidden]">
-            <div class="p-5 sm:p-7 h-full flex flex-col justify-between opacity-80 bg-gradient-to-r from-stone-200/50 via-[#f0e8d8] to-transparent">
-              <div class="flex items-center justify-between text-[9px] sm:text-[10px] font-mono text-stone-400 uppercase tracking-widest border-b border-stone-300/60 pb-2">
-                <span>DIAN TRI YUNIARTI // FOLIO REVERSE</span>
-                <span>VERSO</span>
-              </div>
-              <div class="text-center py-8">
-                <div class="w-8 h-8 mx-auto rounded-full border border-stone-300 text-stone-400 flex items-center justify-center text-xs mb-2 font-serif-academic italic">
-                  d
-                </div>
-                <div class="text-[11px] font-mono text-stone-500 italic">Academic Monograph · Universitas Pamulang</div>
-              </div>
-              <div class="flex items-center justify-between text-[9px] sm:text-[10px] font-mono text-stone-400 pt-2 border-t border-stone-300/60">
-                <span>RESEARCH REPOSITORY</span>
-                <span>INFORMATICS</span>
+          <!-- Tactile Paper Hardcover Card -->
+          <div onclick="openBook()" class="group relative rounded-2xl p-6 sm:p-9 bg-[#f7f2e7] text-stone-900 border border-stone-300 shadow-2xl cursor-pointer overflow-hidden transform hover:-translate-y-1 transition-all duration-300">
+            
+            <!-- Book Spine on the Left -->
+            <div class="absolute inset-y-0 left-0 w-6 sm:w-7 bg-gradient-to-r from-stone-400/40 via-stone-300/20 to-transparent border-r border-stone-300/80 pointer-events-none">
+              <div class="h-full flex flex-col justify-between py-8 items-center opacity-50">
+                <span class="w-full h-[1px] bg-stone-400"></span>
+                <span class="w-full h-[1px] bg-stone-400"></span>
+                <span class="w-full h-[1px] bg-stone-400"></span>
+                <span class="w-full h-[1px] bg-stone-400"></span>
               </div>
             </div>
+
+            <!-- Debossed Inset Line -->
+            <div class="absolute inset-3 sm:inset-4 rounded-xl border border-stone-300/90 pointer-events-none"></div>
+
+            <!-- Top Header Line -->
+            <div class="relative z-10 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-stone-500 tracking-widest uppercase border-b border-stone-300/80 pb-3 pl-2 sm:pl-3">
+              <span class="font-bold text-stone-700">DIAN TRI YUNIARTI</span>
+              <span>2023 – 2025</span>
+            </div>
+
+            <!-- Center Book Title Area -->
+            <div class="relative z-10 my-auto text-center py-8 sm:py-12 pl-2 sm:pl-3">
+              <div class="text-[10px] sm:text-[11px] font-mono tracking-widest text-stone-500 uppercase mb-3 font-semibold">
+                // KUMPULAN ARTIKEL &amp; JURNAL RISET
+              </div>
+
+              <!-- Main Book Title -->
+              <h3 class="text-2xl sm:text-3xl font-bold font-serif-academic text-stone-900 tracking-tight leading-tight mb-4">
+                Published Articles &amp; Research
+              </h3>
+
+              <!-- Divider -->
+              <div class="w-12 h-[1.5px] bg-stone-400 mx-auto my-4"></div>
+
+              <!-- Subtitle -->
+              <p class="text-xs sm:text-sm text-stone-600 font-sans max-w-xs mx-auto leading-relaxed">
+                Dokumentasi 4 publikasi artikel jurnal ilmiah nasional bidang Rekayasa Perangkat Lunak, Sistem Pendukung Keputusan, dan Keamanan Web.
+              </p>
+
+              <!-- Click to Open CTA Pill -->
+              <div class="mt-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs font-mono font-bold bg-stone-900 text-stone-50 shadow-md group-hover:bg-black group-hover:scale-105 transition">
+                <span>Buka Buku (4 Lembar Jurnal)</span>
+                <span class="text-stone-300">&rarr;</span>
+              </div>
+            </div>
+
+            <!-- Bottom Metadata Line -->
+            <div class="relative z-10 border-t border-stone-300/80 pt-3 text-center pl-2 sm:pl-3">
+              <div class="text-[11px] font-mono text-stone-800 tracking-wider uppercase font-bold">
+                DIAN TRI YUNIARTI, S.KOM.
+              </div>
+              <div class="text-[10px] font-mono text-stone-500 tracking-wider uppercase mt-0.5">
+                TEKNIK INFORMATIKA · UNIVERSITAS PAMULANG
+              </div>
+            </div>
+
+            <!-- Bottom Book Edge Thickness (Stacked Paper) -->
+            <div class="absolute -bottom-2 inset-x-4 h-3 rounded-b-lg book-edge-stacked border-x border-b border-stone-300/80 pointer-events-none"></div>
+
+          </div>
+        </div>
+
+        <!-- ==================== VIEW 2: OPEN BOOK SPREAD (2 LEMBAR BERDAMPINGAN) ==================== -->
+        <div id="bookSpreadView" class="hidden relative max-w-5xl mx-auto transition-all duration-300">
+          
+          <!-- Top Toolbar: Chapter Ribbons & Close Book -->
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3.5 pb-1">
+            
+            <!-- Chapter Ribbons (Entry 1 to 4) -->
+            <div class="flex items-center gap-1.5 sm:gap-2 overflow-x-auto pb-1 no-scrollbar flex-1">
+              <button onclick="goToPage(0)" id="tab-0" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition bg-stone-900 text-stone-50 shadow-sm whitespace-nowrap cursor-pointer">
+                01 · Kopiluvium
+              </button>
+              <button onclick="goToPage(1)" id="tab-1" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 whitespace-nowrap cursor-pointer">
+                02 · WASPAS DSS
+              </button>
+              <button onclick="goToPage(2)" id="tab-2" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 whitespace-nowrap cursor-pointer">
+                03 · AI Education (SINTA 5)
+              </button>
+              <button onclick="goToPage(3)" id="tab-3" class="tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 whitespace-nowrap cursor-pointer">
+                04 · Cybersecurity
+              </button>
+            </div>
+
+            <!-- Close Book Button (Kembali ke Sampul) -->
+            <button onclick="closeBook()" title="Tutup Buku / Kembali ke Sampul" class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-mono font-medium bg-[#f4eee3] hover:bg-stone-200 text-stone-800 border border-stone-300 transition whitespace-nowrap shadow-xs cursor-pointer">
+              <svg class="w-3.5 h-3.5 text-stone-600" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              <span>Tutup Buku (Sampul)</span>
+            </button>
+
           </div>
 
-          <!-- DYNAMIC SHADOW OVERLAY AS PAGE LIFTS -->
-          <div id="sheetShadow" class="turn-shadow opacity-0 bg-gradient-to-l from-black/30 via-black/15 to-transparent"></div>
+          <!-- Outer Open Book Spread Frame -->
+          <div class="relative rounded-2xl p-2 sm:p-4 bg-[#ede6d8] border border-stone-300 shadow-2xl">
+            
+            <!-- Book Page Leaves Container (Two Pages) -->
+            <div id="bookContainer" class="relative rounded-xl bg-[#fbf9f4] text-stone-900 overflow-hidden shadow-md border border-stone-300 min-h-[500px]">
+              
+              <!-- Center Spine Gutter Shadow (Desktop) -->
+              <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-10 sm:w-14 pointer-events-none z-20 book-gutter-shadow hidden md:block"></div>
+              <div class="absolute inset-y-0 left-1/2 -translate-x-1/2 w-[1px] bg-stone-300 pointer-events-none z-20 hidden md:block"></div>
+
+              <!-- Page Content Container -->
+              <div id="pageContent" class="h-full">
+                <!-- Rendered via JavaScript -->
+              </div>
+
+            </div>
+
+            <!-- Bottom Book Thickness Edge -->
+            <div class="absolute -bottom-2 inset-x-6 h-3 rounded-b-lg book-edge-stacked border-x border-b border-stone-300 pointer-events-none"></div>
+
+          </div>
+
+          <!-- Navigation Toolbar Below Spread -->
+          <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs font-mono">
+            <!-- Prev Button -->
+            <button onclick="prevPage()" id="prevBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[#f4eee3] hover:bg-stone-200 border border-stone-300 text-stone-800 transition disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer">
+              <span>&larr; Halaman Sebelumnya</span>
+            </button>
+
+            <!-- Indicator -->
+            <div class="flex items-center gap-2 text-stone-400">
+              <span>DOKUMEN <strong id="pageCounter" class="text-stone-900 font-bold">1</strong> DARI <strong>4</strong></span>
+              <span class="text-stone-600 hidden sm:inline">|</span>
+              <span id="pageTitlePreview" class="text-stone-700 font-medium hidden sm:inline truncate max-w-xs font-sans">Kopiluvium (2025)</span>
+            </div>
+
+            <!-- Next Button -->
+            <button onclick="nextPage()" id="nextBtn" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-stone-900 hover:bg-black text-stone-50 font-semibold shadow-xs transition disabled:opacity-40 disabled:cursor-not-allowed cursor-pointer">
+              <span>Halaman Selanjutnya &rarr;</span>
+            </button>
+          </div>
 
         </div>
 
-      </div>
-
-      <!-- MINIMAL NATURAL CONTROLS BELOW BOOK -->
-      <div class="mt-5 flex items-center justify-between gap-4 w-full max-w-[460px] mx-auto text-xs font-mono text-slate-400 px-1 reveal">
-        <button onclick="flipPrev()" id="btnPrev" class="hover:text-white transition flex items-center gap-1.5 disabled:opacity-25 disabled:cursor-not-allowed">
-          <span class="text-sm">←</span> <span>Prev</span>
-        </button>
-
-        <div class="flex items-center gap-2">
-          <span id="pageDots" class="flex gap-1.5 items-center">
-            <!-- Dots injected -->
-          </span>
-          <span id="pageLabel" class="text-slate-300 font-bold ml-1.5 text-[11px]">COVER</span>
-        </div>
-
-        <button onclick="flipNext()" id="btnNext" class="hover:text-white transition flex items-center gap-1.5 disabled:opacity-25 disabled:cursor-not-allowed">
-          <span>Next</span> <span class="text-sm">→</span>
-        </button>
       </div>
 
       <!-- ==================== PUBLISHED ARTICLES ==================== -->
@@ -2928,392 +3049,265 @@
       }
     }
   
-    // ==================== ACADEMIC BOOK READER LOGIC (COVER & SPREAD) ====================
-    // 4 PUBLICATION PAPERS DATA & NATURAL BOOK PAGE-TURN ENGINE
-    const publicationBookPages = [
+    // ==================== ACADEMIC BOOK SPREAD & PAPER ENGINE ====================
+    const papers = [
       {
-        type: 'cover',
-        title: 'Published Articles & Research',
-        subtitle: 'Collection of 4 research papers in software engineering, decision support systems, and web security',
-        author: 'Dian Tri Yuniarti, S.Kom.',
-        dept: 'Informatics Engineering · Universitas Pamulang',
-        period: '2023 – 2025'
+        volume: "Vol. 4, No. 5 · 2025",
+        journal: "OKTAL: Jurnal Ilmu Komputer & Sains",
+        badge: "OKTAL JOURNAL",
+        badgeColor: "bg-stone-200 text-stone-800 border-stone-300",
+        title: "Perancangan Aplikasi Pendataan Stok Opname Gudang Berbasis Web Menggunakan Metode Waterfall pada Kopiluvium",
+        authors: "Yuniarti, D. T., Alfitra, R., Prasetya, R. N., & Saprudin",
+        field: "Enterprise Software Engineering & Database Systems",
+        abstract: "Membahas perancangan aplikasi inventaris untuk meniadakan selisih fisik bahan baku di gudang Kopiluvium. Menggunakan metode Waterfall yang mencakup analisis kebutuhan, pemodelan UML, perancangan antarmuka, implementasi PHP/MySQL, dan pengujian Black-Box.",
+        highlights: [
+          "Meniadakan pencatatan nota kertas konvensional",
+          "Formulir audit stok opname berkala otomatis",
+          "Pemisahan hak akses Admin dan Staf Gudang",
+          "Pengujian fungsionalitas dengan Black-Box testing"
+        ],
+        primaryUrl: "https://journal.mediapublikasi.id/index.php/oktal",
+        primaryLabel: "Buka Portal Jurnal ↗",
+        scholarUrl: "https://scholar.google.com/scholar?q=Perancangan+Aplikasi+Pendataan+Stok+Opname+Gudang+Berbasis+Web+Menggunakan+Metode+Waterfall+pada+Kopiluvium",
+        scholarLabel: "Google Scholar ↗",
+        handwrittenNote: "catatan: riset dari hasil kerja praktek di Kopiluvium"
       },
       {
-        type: 'paper',
-        index: 1,
-        volume: 'Vol. 4, No. 5 · 2025',
-        journal: 'OKTAL: JURNAL ILMU KOMPUTER & SAINS',
-        badge: 'OKTAL JOURNAL',
-        badgeColor: 'bg-stone-200 text-stone-800 border-stone-300',
-        title: 'Design of a Web-Based Warehouse Stock-Taking Application Using the Waterfall Model at Kopiluvium',
-        authors: 'Yuniarti, D. T., Alfitra, R., Prasetya, R. N., & Saprudin',
-        domain: 'Enterprise Software Engineering & Database Systems',
-        abstract: 'Details requirements engineering, UML modeling, Figma UI prototyping, PHP/MySQL implementation, and Black-Box verification for Kopiluvium warehouse inventory audits, completely replacing manual paper ledgers with automated reconciliation.',
-        handwritten: 'catatan: riset dari hasil kerja praktek di Kopiluvium',
-        primaryUrl: 'https://journal.mediapublikasi.id/index.php/oktal',
-        primaryLabel: 'Open Journal Portal ↗',
-        scholarUrl: 'https://scholar.google.com/scholar?q=Perancangan+Aplikasi+Pendataan+Stok+Opname+Gudang+Berbasis+Web+Menggunakan+Metode+Waterfall+pada+Kopiluvium',
-        scholarLabel: 'Google Scholar ↗'
+        volume: "Vol. 15, No. 3 · 2025",
+        journal: "Jurnal FASILKOM (Fakultas Ilmu Komputer)",
+        badge: "JURNAL FASILKOM",
+        badgeColor: "bg-stone-200 text-stone-800 border-stone-300",
+        title: "Analisis Penerapan Metode WASPAS untuk Penentuan Pola Belajar Mahasiswa Berdasarkan Gaya Belajar",
+        authors: "Ester, R., Yuniarti, D. T., Valentina, P. E., & Putra, F. M. K.",
+        field: "Decision Support Systems (DSS) & Applied Algorithms",
+        abstract: "Penerapan metode sistem pendukung keputusan Weighted Aggregated Sum Product Assessment (WASPAS) yang menggabungkan Weighted Sum Model (WSM) dan Weighted Product Model (WPM) untuk menentukan pola belajar mahasiswa secara adaptif.",
+        highlights: [
+          "Kombinasi model linier WSM dan perkalian eksponensial WPM",
+          "Pembobotan kriteria gaya belajar visual, auditori, dan kinestetik",
+          "Matriks perangkingan keputusan terstruktur",
+          "Uji akurasi rekomendasi terhadap data sampel mahasiswa"
+        ],
+        primaryUrl: "https://ejurnal.umri.ac.id/index.php/JIK/",
+        primaryLabel: "Buka Portal Jurnal ↗",
+        scholarUrl: "https://scholar.google.com/scholar?q=Analisis+Penerapan+Metode+WASPAS+untuk+Penentuan+Pola+Belajar+Mahasiswa+Berdasarkan+Gaya+Belajar",
+        scholarLabel: "Google Scholar ↗",
+        handwrittenNote: "catatan: pemodelan algoritma WASPAS"
       },
       {
-        type: 'paper',
-        index: 2,
-        volume: 'Vol. 15, No. 3 · 2025',
-        journal: 'JURNAL FASILKOM (FAKULTAS ILMU KOMPUTER)',
-        badge: 'JURNAL FASILKOM',
-        badgeColor: 'bg-stone-200 text-stone-800 border-stone-300',
-        title: 'Application Analysis of the WASPAS Method for Classifying Student Learning Patterns Based on Learning Styles',
-        authors: 'Ester, R., Yuniarti, D. T., Valentina, P. E., & Putra, F. M. K.',
-        domain: 'Decision Support Systems (DSS) & Applied Algorithms',
-        abstract: 'Implementation of the Weighted Aggregated Sum Product Assessment (WASPAS) decision support method combining WSM and WPM to evaluate and recommend optimal learning patterns based on student behavioral preferences.',
-        handwritten: 'catatan: pemodelan algoritma WASPAS',
-        primaryUrl: 'https://ejurnal.umri.ac.id/index.php/JIK/',
-        primaryLabel: 'Open Journal Portal ↗',
-        scholarUrl: 'https://scholar.google.com/scholar?q=Analisis+Penerapan+Metode+WASPAS+untuk+Penentuan+Pola+Belajar+Mahasiswa+Berdasarkan+Gaya+Belajar',
-        scholarLabel: 'Google Scholar ↗'
+        volume: "Vol. 6, No. 2 · Des 2025",
+        journal: "JUTECH (Jurnal Pendidikan Teknologi Informasi)",
+        badge: "JUTECH · SINTA 5",
+        badgeColor: "bg-stone-200 text-stone-800 border-stone-300",
+        title: "Analisis Integrasi Teknologi Informasi dan AI dalam Mempersiapkan Siswa Vokasi Menghadapi Industri Digital",
+        authors: "Suhada, J., Ardana, I. M. S., Yuniarti, D. T., & Rizky, M.",
+        field: "Artificial Intelligence & Technical Pedagogy",
+        abstract: "Studi empiris mengenai integrasi perkakas kecerdasan buatan generatif dalam kurikulum vokasi teknologi informasi untuk menjembatani kesenjangan kompetensi lulusan dengan kebutuhan industri digital modern.",
+        highlights: [
+          "Terakreditasi Nasional SINTA Peringkat 5",
+          "Evaluasi kompetensi terapan di bidang IT",
+          "Analisis adopsi alat bantu AI generatif",
+          "Rekomendasi kurikulum berbasis industri"
+        ],
+        primaryUrl: "https://doi.org/10.31932/jutech.v6i2.5045",
+        primaryLabel: "Buka DOI Artikel ↗",
+        scholarUrl: "https://jurnal.stkippersada.ac.id/jurnal/index.php/jutech/article/view/5045",
+        scholarLabel: "Portal OJS ↗",
+        handwrittenNote: "catatan: terindeks SINTA Kemendikbudristek"
       },
       {
-        type: 'paper',
-        index: 3,
-        volume: 'Vol. 6, No. 2 · Dec 2025',
-        journal: 'JUTECH (JURNAL PENDIDIKAN TEKNOLOGI INFORMASI)',
-        badge: 'JUTECH · SINTA 5',
-        badgeColor: 'bg-stone-200 text-stone-800 border-stone-300',
-        title: 'Analysis of Information Technology and AI Integration in Preparing Vocational Students for the Digital Industry',
-        authors: 'Suhada, J., Ardana, I. M. S., Yuniarti, D. T., & Rizky, M.',
-        domain: 'Artificial Intelligence & Technical Pedagogy',
-        abstract: 'Empirical research examining generative AI tool integration into vocational computing curricula to bridge digital workforce competency requirements and match digital industry standards.',
-        handwritten: 'catatan: terindeks SINTA Kemendikbudristek',
-        primaryUrl: 'https://doi.org/10.31932/jutech.v6i2.5045',
-        primaryLabel: 'Open DOI Article ↗',
-        scholarUrl: 'https://jurnal.stkippersada.ac.id/jurnal/index.php/jutech/article/view/5045',
-        scholarLabel: 'OJS Portal ↗'
-      },
-      {
-        type: 'paper',
-        index: 4,
-        volume: 'Vol. 14, No. 1 · 2023',
-        journal: 'JURNAL KAJIAN KOMPUTASI INOVATIF (JKKI)',
-        badge: 'JKKI JOURNAL',
-        badgeColor: 'bg-stone-200 text-stone-800 border-stone-300',
-        title: 'Security Vulnerability Analysis of University E-Learning Web Application Using Vulnerability Assessment',
-        authors: 'Kumalasari, I., Yuniarti, D. T., Indriani, R., Rizky, M., & Gea, K.',
-        domain: 'Web Application Security & Vulnerability Auditing',
-        abstract: 'Cybersecurity assessment of an institutional higher-education e-learning platform identifying configuration weaknesses, input sanitization gaps, and actionable security remediation strategies.',
-        handwritten: 'catatan: audit keamanan web LMS kampus',
-        primaryUrl: 'https://scholar.google.com/scholar?q=Analisis+Celah+Keamanan+Aplikasi+Web+E-Learning+Universitas+Pamulang+Dian+Tri+Yuniarti',
-        primaryLabel: 'View on Google Scholar ↗',
-        scholarUrl: 'https://scholar.google.com/scholar?q=Analisis+Celah+Keamanan+Aplikasi+Web+E-Learning+Universitas+Pamulang+Dian+Tri+Yuniarti',
-        scholarLabel: 'Citation Archive ↗'
+        volume: "Vol. 14, No. 1 · 2023",
+        journal: "Jurnal Kajian Komputasi Inovatif (JKKI)",
+        badge: "JKKI JOURNAL",
+        badgeColor: "bg-stone-200 text-stone-800 border-stone-300",
+        title: "Analisis Celah Keamanan Aplikasi Web E-Learning Universitas Menggunakan Vulnerability Assessment",
+        authors: "Kumalasari, I., Yuniarti, D. T., Indriani, R., Rizky, M., & Gea, K.",
+        field: "Web Application Security & Vulnerability Auditing",
+        abstract: "Audit keamanan aplikasi e-learning perguruan tinggi untuk mengidentifikasi celah sanitasi input, konfigurasi server, serta manajemen sesi, dilengkapi rekomendasi mitigasi keamanan terstruktur bagi administrator kampus.",
+        highlights: [
+          "Pemetaan kerentanan berbasis standar OWASP",
+          "Uji eksploitasi terpandu dan audit konfigurasi",
+          "Analisis sanitasi input dan validasi sesi pengguna",
+          "Panduan remediasi teknis bagi tim pengelola web"
+        ],
+        primaryUrl: "https://scholar.google.com/scholar?q=Analisis+Celah+Keamanan+Aplikasi+Web+E-Learning+Universitas+Pamulang+Dian+Tri+Yuniarti",
+        primaryLabel: "Lihat di Google Scholar ↗",
+        scholarUrl: "https://scholar.google.com/scholar?q=Analisis+Celah+Keamanan+Aplikasi+Web+E-Learning+Universitas+Pamulang+Dian+Tri+Yuniarti",
+        scholarLabel: "Arsip Sitasi ↗",
+        handwrittenNote: "catatan: audit keamanan web LMS kampus"
       }
     ];
 
-    let currentBookIndex = 0;
-    const totalBookPages = publicationBookPages.length;
+    let currentPaperIdx = 0;
 
-    function renderBookPageHTML(page) {
-      if (page.type === 'cover') {
-        return `
-          <!-- NATURAL MINIMALIST HARDCOVER -->
-          <div class="h-full w-full p-5 sm:p-8 flex flex-col justify-between bg-gradient-to-br from-[#1c0813] via-[#12040b] to-[#0a0206] text-white relative cover-stacked-peek border border-rose-950/80">
-            
-            <!-- Left Spine Hinge Shadow -->
-            <div class="absolute inset-y-0 left-0 w-5 sm:w-6 bg-gradient-to-r from-black/80 via-black/20 to-transparent border-r border-rose-950/60 pointer-events-none"></div>
+    function openBook(targetIndex = 0) {
+      const cover = document.getElementById('bookCoverView');
+      const spread = document.getElementById('bookSpreadView');
+      if (cover) cover.classList.add('hidden');
+      if (spread) spread.classList.remove('hidden');
+      goToPage(targetIndex);
+    }
 
-            <!-- Subtle Blind Debossed Inset Line -->
-            <div class="absolute inset-3 sm:inset-4 rounded border border-rose-500/20 pointer-events-none"></div>
+    function closeBook() {
+      const cover = document.getElementById('bookCoverView');
+      const spread = document.getElementById('bookSpreadView');
+      if (spread) spread.classList.add('hidden');
+      if (cover) cover.classList.remove('hidden');
+    }
 
-            <!-- Top Header Line -->
-            <div class="relative z-10 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-rose-300/70 tracking-widest uppercase border-b border-rose-900/40 pb-2.5 sm:pb-3">
-              <span>DIAN TRI YUNIARTI</span>
-              <span>${page.period}</span>
-            </div>
+    function renderSpread(idx) {
+      const p = papers[idx];
+      const pageNumLeft = (idx * 2) + 1;
+      const pageNumRight = (idx * 2) + 2;
 
-            <!-- Center Book Title Area -->
-            <div class="relative z-10 my-auto text-center py-3 sm:py-6">
-              <div class="text-[9px] sm:text-[10px] font-mono tracking-widest text-stone-400 uppercase mb-2 sm:mb-3">
-                RESEARCH PUBLICATIONS
+      return `
+        <!-- SPREAD (2 LEMBAR BERDAMPINGAN PADA DESKTOP & BERURUT PADA MOBILE) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-stone-300/80 h-full">
+          
+          <!-- LEFT PAGE (LEMBAR KIRI) -->
+          <div class="p-5 sm:p-7 md:p-8 flex flex-col justify-between book-left-edge bg-gradient-to-r from-stone-100/50 via-[#fbf9f4] to-[#fbf9f4]">
+            <div>
+              <div class="flex items-center justify-between border-b border-stone-300 pb-2 mb-4 text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-wider">
+                <span>DIAN TRI YUNIARTI // PUBLIKASI RISET</span>
+                <span>DOKUMEN 0${idx + 1}</span>
               </div>
 
-              <!-- Main Book Title -->
-              <h3 class="text-xl sm:text-3xl font-bold font-serif-academic text-white tracking-wide leading-tight mb-3 sm:mb-4 text-stone-100">
-                ${page.title}
+              <div class="flex flex-wrap items-center gap-2 mb-2.5">
+                <span class="px-2.5 py-0.5 rounded text-[10px] font-mono font-bold border ${p.badgeColor}">
+                  ${p.badge}
+                </span>
+                <span class="text-xs font-mono font-bold text-stone-700">
+                  ${p.volume}
+                </span>
+              </div>
+
+              <div class="text-xs font-mono uppercase tracking-wider text-stone-600 mb-2 font-bold">
+                ${p.journal}
+              </div>
+
+              <h3 class="text-base sm:text-lg lg:text-xl font-bold font-serif-academic text-stone-900 leading-snug mb-3">
+                "${p.title}"
               </h3>
 
-              <!-- Divider -->
-              <div class="w-14 sm:w-16 h-[1px] bg-rose-500/40 mx-auto my-3 sm:my-4"></div>
-
-              <!-- Subtitle -->
-              <p class="text-[11px] sm:text-xs text-rose-200/80 font-sans max-w-xs mx-auto leading-relaxed">
-                ${page.subtitle}
-              </p>
-            </div>
-
-            <!-- Bottom Cover Meta -->
-            <div class="relative z-10 text-center border-t border-rose-900/40 pt-3 sm:pt-4 space-y-0.5 sm:space-y-1">
-              <div class="text-[11px] sm:text-xs font-mono font-bold text-white uppercase tracking-wider">
-                ${page.author}
+              <div class="text-xs font-mono text-stone-600 mb-4 bg-stone-200/60 p-2.5 rounded border border-stone-300/70">
+                <span class="text-stone-500 uppercase text-[9px] block mb-0.5 font-bold">TIM PENULIS / PENELITI:</span>
+                ${p.authors.replace('Yuniarti, D. T.', '<strong class="text-stone-950 font-bold underline decoration-stone-600 decoration-1">Yuniarti, D. T.</strong>')}
               </div>
-              <div class="text-[9px] sm:text-[10px] font-mono text-rose-400/80 tracking-wider uppercase">
-                ${page.dept}
+
+              <div class="text-xs text-stone-600 space-y-0.5">
+                <div class="text-[9px] font-mono uppercase tracking-wider text-stone-500 font-bold">BIDANG KAJIAN:</div>
+                <div class="font-medium text-stone-800">${p.field}</div>
               </div>
             </div>
 
-          </div>
-        `;
-      }
-
-      // Paper Inside Page (Matching Reference Screenshot)
-      return `
-        <div class="h-full w-full p-4 sm:p-7 flex flex-col justify-between bg-[#fbf8f2] text-stone-900 relative stacked-pages-peek spine-crease border-y border-stone-300">
-          
-          <div>
-            <!-- Header Line -->
-            <div class="flex items-center justify-between border-b border-stone-300/80 pb-1.5 sm:pb-2 mb-2 sm:mb-3 text-[9px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-wider">
-              <span>DIAN TRI YUNIARTI<span class="hidden sm:inline"> // RESEARCH PAPERS</span></span>
-              <span>ENTRY 0${page.index}</span>
-            </div>
-
-            <!-- Badge & Volume -->
-            <div class="flex items-center justify-between gap-1.5 mb-1.5 sm:mb-2">
-              <span class="px-2 py-0.5 rounded text-[9px] sm:text-[10px] font-mono font-bold border ${page.badgeColor}">
-                ${page.badge}
-              </span>
-              <span class="text-[11px] sm:text-xs font-mono font-bold text-rose-800">
-                ${page.volume}
-              </span>
-            </div>
-
-            <!-- Journal Name -->
-            <div class="text-[10px] sm:text-xs font-mono uppercase tracking-wider text-stone-600 font-bold mb-1.5 sm:mb-2">
-              ${page.journal}
-            </div>
-
-            <!-- Paper Title -->
-            <h3 class="text-base sm:text-xl font-bold font-serif-academic text-stone-900 leading-snug mb-2 sm:mb-3">
-              "${page.title}"
-            </h3>
-
-            <!-- Authors Box with Red Underline on Dian -->
-            <div class="text-[10px] sm:text-xs font-mono text-stone-600 mb-2 sm:mb-3 bg-stone-200/50 p-2 sm:p-2.5 rounded border border-stone-300/60 leading-snug">
-              <span class="text-stone-500 uppercase text-[8px] sm:text-[9px] block mb-0.5 font-bold">AUTHORS / RESEARCHERS:</span>
-              ${page.authors.replace('Yuniarti, D. T.', '<strong class="text-rose-900 font-bold underline decoration-rose-500 decoration-1">Yuniarti, D. T.</strong>')}
-            </div>
-
-            <!-- Research Domain -->
-            <div class="text-[10px] sm:text-[11px] text-stone-600 space-y-0.5 mb-2 sm:mb-3">
-              <div class="text-[8px] sm:text-[9px] font-mono uppercase tracking-wider text-stone-500 font-bold">RESEARCH DOMAIN:</div>
-              <div class="font-medium text-stone-800">${page.domain}</div>
-            </div>
-
-            <!-- Abstract -->
-            <p class="text-[11px] sm:text-xs text-stone-700 leading-relaxed font-sans mb-2 sm:mb-3 text-justify">
-              ${page.abstract}
-            </p>
-
-            <!-- Handwritten Note -->
-            <div class="font-handwriting text-stone-600 text-xs sm:text-sm my-0.5 sm:my-1">
-              ${page.handwritten}
-            </div>
-          </div>
-
-          <!-- Bottom Actions & Running Footer -->
-          <div>
-            <div class="flex flex-wrap items-center gap-1.5 sm:gap-2 pt-2 border-t border-stone-300/80 mb-1.5 sm:mb-2">
-              <a href="${page.primaryUrl}" target="_blank" rel="noopener noreferrer" 
-                 class="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1 sm:py-1.5 rounded text-[11px] sm:text-xs font-mono font-bold bg-stone-900 hover:bg-black text-stone-50 shadow-sm transition">
-                <span>${page.primaryLabel}</span>
-              </a>
-              <a href="${page.scholarUrl}" target="_blank" rel="noopener noreferrer" 
-                 class="inline-flex items-center gap-1 px-2 sm:px-2.5 py-1 sm:py-1.5 rounded text-[11px] sm:text-xs font-mono font-medium text-stone-700 bg-stone-200/80 hover:bg-stone-300/80 border border-stone-300 transition">
-                <span>${page.scholarLabel}</span>
-              </a>
-            </div>
-
-            <div class="flex items-center justify-between text-[9px] sm:text-[11px] font-mono text-stone-500 pt-1 border-t border-stone-200">
+            <div class="pt-3 border-t border-stone-300/80 mt-5 flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-stone-500">
               <span>UNIVERSITAS PAMULANG</span>
-              <span>PG. ${page.index}</span>
+              <span>HAL. ${pageNumLeft}</span>
             </div>
+          </div>
+
+          <!-- RIGHT PAGE (LEMBAR KANAN) -->
+          <div class="p-5 sm:p-7 md:p-8 flex flex-col justify-between book-right-edge bg-gradient-to-l from-stone-100/50 via-[#fbf9f4] to-[#fbf9f4]">
+            <div>
+              <div class="flex items-center justify-between border-b border-stone-300 pb-2 mb-4 text-[10px] sm:text-[11px] font-mono text-stone-500 uppercase tracking-wider">
+                <span class="truncate max-w-[200px]">${p.journal}</span>
+                <span>HAL. ${pageNumRight}</span>
+              </div>
+
+              <div class="mb-4">
+                <div class="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-stone-700 mb-1.5 flex items-center gap-1.5">
+                  <span class="w-2 h-2 bg-stone-800 rounded-full"></span>
+                  <span>RINGKASAN &amp; ABSTRAK</span>
+                </div>
+                <p class="text-xs sm:text-[13px] text-stone-700 leading-relaxed font-sans text-justify">
+                  ${p.abstract}
+                </p>
+              </div>
+
+              <div class="mb-4">
+                <div class="text-[10px] sm:text-[11px] font-mono font-bold uppercase tracking-wider text-stone-700 mb-1.5">
+                  // CAKUPAN METODOLOGI &amp; HASIL:
+                </div>
+                <ul class="space-y-1 text-xs text-stone-600 font-sans pl-4 list-disc marker:text-stone-400">
+                  ${p.highlights.map(h => `<li>${h}</li>`).join('')}
+                </ul>
+              </div>
+
+              <div class="font-handwriting text-stone-600 text-sm sm:text-base my-2">
+                ${p.handwrittenNote}
+              </div>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap items-center gap-2 pt-3 border-t border-stone-300/80 mb-3">
+                <a href="${p.primaryUrl}" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-bold bg-stone-900 hover:bg-black text-stone-50 shadow-xs transition">
+                  <span>${p.primaryLabel}</span>
+                </a>
+                <a href="${p.scholarUrl}" target="_blank" rel="noopener noreferrer" 
+                   class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono font-medium text-stone-700 bg-stone-200 hover:bg-stone-300 border border-stone-300 transition">
+                  <span>${p.scholarLabel}</span>
+                </a>
+              </div>
+
+              <div class="flex items-center justify-between text-[10px] sm:text-[11px] font-mono text-stone-500 pt-1 border-t border-stone-200">
+                <span>ARSIP RISET TERVERIFIKASI</span>
+                <span>ENTRY 0${idx + 1} / 04</span>
+              </div>
+            </div>
+
           </div>
 
         </div>
       `;
     }
 
-    const turningSheet = document.getElementById('turningSheet');
-    const turningFront = document.getElementById('turningFront');
-    const underPage = document.getElementById('underPage');
-    const sheetShadow = document.getElementById('sheetShadow');
-    const bookWrapper = document.getElementById('bookWrapper');
-
-    function updateBookView() {
-      if (!turningFront || !underPage) return;
-      turningFront.innerHTML = renderBookPageHTML(publicationBookPages[currentBookIndex]);
-
-      if (currentBookIndex < totalBookPages - 1) {
-        underPage.innerHTML = renderBookPageHTML(publicationBookPages[currentBookIndex + 1]);
-        underPage.style.display = 'block';
-      } else {
-        underPage.innerHTML = `
-          <div class="h-full w-full bg-[#12040b] p-6 sm:p-8 flex flex-col items-center justify-center text-center text-rose-300 font-mono text-xs border border-rose-950/80">
-            <div class="w-10 h-10 rounded-full border border-rose-800 flex items-center justify-center mb-2 sm:mb-3">✓</div>
-            <div class="font-bold text-sm text-white mb-1">END OF VOLUME</div>
-            <div class="text-[11px] text-slate-400">All 4 publications reviewed</div>
-            <button onclick="goToBookPage(0)" class="mt-4 px-3 py-1 rounded bg-rose-800 hover:bg-rose-700 text-white text-[11px] transition">Back to Cover</button>
-          </div>
-        `;
+    function goToPage(idx) {
+      currentPaperIdx = idx;
+      const contentEl = document.getElementById('pageContent');
+      if (contentEl) {
+        contentEl.innerHTML = renderSpread(idx);
       }
+      
+      const counterEl = document.getElementById('pageCounter');
+      if (counterEl) counterEl.innerText = idx + 1;
 
-      turningSheet.style.transition = 'none';
-      turningSheet.style.transform = 'rotateY(0deg)';
-      if (sheetShadow) sheetShadow.style.opacity = '0';
+      const previewNames = ['Kopiluvium (2025)', 'WASPAS DSS (2025)', 'JUTECH SINTA 5 (2025)', 'Keamanan Web (2023)'];
+      const previewEl = document.getElementById('pageTitlePreview');
+      if (previewEl) previewEl.innerText = previewNames[idx];
 
-      const label = document.getElementById('pageLabel');
-      if (label) label.textContent = currentBookIndex === 0 ? 'COVER' : `PAGE ${currentBookIndex} / 4`;
-
-      const prevBtn = document.getElementById('btnPrev');
-      if (prevBtn) prevBtn.disabled = (currentBookIndex === 0);
-
-      const nextBtn = document.getElementById('btnNext');
-      if (nextBtn) nextBtn.disabled = (currentBookIndex === totalBookPages - 1);
-
-      const dotsContainer = document.getElementById('pageDots');
-      if (dotsContainer) {
-        dotsContainer.innerHTML = publicationBookPages.map((p, i) => `
-          <span onclick="goToBookPage(${i})" class="w-1.5 h-1.5 rounded-full cursor-pointer transition-all duration-300 ${i === currentBookIndex ? 'bg-rose-500 scale-125' : 'bg-slate-700 hover:bg-slate-500'}"></span>
-        `).join('');
-      }
-    }
-
-    let isBookDragging = false;
-    let bookStartX = 0;
-    let bookCurrentX = 0;
-    let cachedBookWidth = 460;
-
-    function onBookPointerDown(e) {
-      if (e.target.closest('a') || e.target.closest('button')) return;
-      isBookDragging = true;
-      bookStartX = e.clientX;
-      bookCurrentX = e.clientX;
-      cachedBookWidth = bookWrapper ? bookWrapper.offsetWidth : 460;
-      if (turningSheet) {
-        turningSheet.style.transition = 'none';
-        try { turningSheet.setPointerCapture(e.pointerId); } catch (err) {}
-      }
-    }
-
-    function onBookPointerMove(e) {
-      if (!isBookDragging || !turningSheet) return;
-      bookCurrentX = e.clientX;
-      const dx = bookStartX - bookCurrentX;
-
-      if (dx > 0 && currentBookIndex < totalBookPages - 1) {
-        const progress = Math.min(Math.max(dx / cachedBookWidth, 0), 1);
-        const angle = -progress * 180;
-        turningSheet.style.transform = `rotateY(${angle}deg)`;
-        if (sheetShadow) sheetShadow.style.opacity = Math.sin(progress * Math.PI) * 0.45;
-      }
-    }
-
-    function onBookPointerUp(e) {
-      if (!isBookDragging) return;
-      isBookDragging = false;
-      if (turningSheet) {
-        try { turningSheet.releasePointerCapture(e.pointerId); } catch (err) {}
-      }
-
-      const dx = bookStartX - bookCurrentX;
-
-      // Click detection
-      if (Math.abs(dx) < 12) {
-        if (!turningSheet) return;
-        const rect = turningSheet.getBoundingClientRect();
-        const clickX = e.clientX - rect.left;
-        if (clickX > rect.width * 0.45) {
-          flipNext();
-        } else if (clickX < rect.width * 0.35 && currentBookIndex > 0) {
-          flipPrev();
-        }
-        return;
-      }
-
-      if (dx > 50 && currentBookIndex < totalBookPages - 1) {
-        turningSheet.style.transition = 'transform 0.38s cubic-bezier(0.25, 1, 0.5, 1)';
-        turningSheet.style.transform = 'rotateY(-180deg)';
-        if (sheetShadow) sheetShadow.style.opacity = '0';
-        setTimeout(() => {
-          currentBookIndex++;
-          updateBookView();
-        }, 360);
-      } else if (dx < -50 && currentBookIndex > 0) {
-        flipPrev();
-      } else {
-        turningSheet.style.transition = 'transform 0.3s cubic-bezier(0.25, 1, 0.5, 1)';
-        turningSheet.style.transform = 'rotateY(0deg)';
-        if (sheetShadow) sheetShadow.style.opacity = '0';
-      }
-    }
-
-    function flipNext() {
-      if (currentBookIndex >= totalBookPages - 1 || !turningSheet) return;
-      turningSheet.style.transition = 'transform 0.48s cubic-bezier(0.25, 1, 0.5, 1)';
-      turningSheet.style.transform = 'rotateY(-180deg)';
-      if (sheetShadow) sheetShadow.style.opacity = '0.35';
-      setTimeout(() => {
-        currentBookIndex++;
-        updateBookView();
-      }, 440);
-    }
-
-    function flipPrev() {
-      if (currentBookIndex <= 0 || !turningSheet) return;
-      currentBookIndex--;
-      updateBookView();
-      turningSheet.style.transition = 'none';
-      turningSheet.style.transform = 'rotateY(-180deg)';
-      void turningSheet.offsetWidth;
-      turningSheet.style.transition = 'transform 0.48s cubic-bezier(0.25, 1, 0.5, 1)';
-      turningSheet.style.transform = 'rotateY(0deg)';
-    }
-
-    function goToBookPage(idx) {
-      if (idx === currentBookIndex || idx < 0 || idx >= totalBookPages) return;
-      if (idx > currentBookIndex) {
-        currentBookIndex = idx - 1;
-        updateBookView();
-        flipNext();
-      } else {
-        currentBookIndex = idx + 1;
-        updateBookView();
-        flipPrev();
-      }
-    }
-
-    if (turningSheet) {
-      turningSheet.addEventListener('pointerdown', onBookPointerDown);
-      turningSheet.addEventListener('pointermove', onBookPointerMove);
-      turningSheet.addEventListener('pointerup', onBookPointerUp);
-      turningSheet.addEventListener('pointercancel', onBookPointerUp);
-    }
-
-    window.addEventListener('keydown', (e) => {
-      const pubSec = document.getElementById('publikasi');
-      if (pubSec) {
-        const rect = pubSec.getBoundingClientRect();
-        if (rect.top < window.innerHeight && rect.bottom > 0) {
-          if (e.key === 'ArrowRight') flipNext();
-          if (e.key === 'ArrowLeft') flipPrev();
-          if (e.key === 'Home') goToBookPage(0);
+      for (let i = 0; i < 4; i++) {
+        const tab = document.getElementById(`tab-${i}`);
+        if (tab) {
+          if (i === idx) {
+            tab.className = 'tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-bold transition bg-stone-900 text-stone-50 shadow-sm whitespace-nowrap cursor-pointer';
+          } else {
+            tab.className = 'tab-btn px-3 py-1.5 rounded-lg text-xs font-mono font-medium transition bg-stone-200 hover:bg-stone-300 text-stone-800 border border-stone-300 whitespace-nowrap cursor-pointer';
+          }
         }
       }
-    });
 
-    // Initialize book view
-    updateBookView();
+      const prevBtn = document.getElementById('prevBtn');
+      const nextBtn = document.getElementById('nextBtn');
+      if (prevBtn) prevBtn.disabled = (idx === 0);
+      if (nextBtn) nextBtn.disabled = (idx === 3);
+    }
 
+    function nextPage() {
+      if (currentPaperIdx < 3) {
+        goToPage(currentPaperIdx + 1);
+      }
+    }
 
-  // Contact Form Email Draft Generator (Matching Reference UX)
+    function prevPage() {
+      if (currentPaperIdx > 0) {
+        goToPage(currentPaperIdx - 1);
+      }
+    }
+
+    // Default init
+    goToPage(0);
+
+    // Contact Form Email Draft Generator (Matching Reference UX)
   function handleSendDraft(event) {
     event.preventDefault();
     const name = document.getElementById('contactName').value.trim() || 'Colleague';
